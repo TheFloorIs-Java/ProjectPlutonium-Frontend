@@ -6,16 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-page-component.component.css']
 })
 export class AdminPageComponentComponent implements OnInit {
-
+  msg!: string;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  clickEvent(){
+   this.msg='Button is Clicked';
+   return this.msg;
+   
+  }
 }
+
+
+
+
+
 //////////////////////Button click to load users
 let button = document.getElementById('loadButton');
-button.onclick = loadUsers;
+//button.onclick = loadUsers;
+button.onclick = 'hi';
 function loadUsers(){
   let request = new XMLHttpRequest();
   request.open("GET", "http://localhost:9004/Users");
