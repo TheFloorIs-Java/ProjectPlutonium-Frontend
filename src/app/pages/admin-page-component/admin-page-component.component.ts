@@ -1,4 +1,4 @@
-//import {HttpClient} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,15 +6,16 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './admin-page-component.component.html',
   styleUrls: ['./admin-page-component.component.css']
 })
+
 export class AdminPageComponentComponent implements OnInit {
-  msg: String ="hi";
+  msg!: string;
   constructor() { }
 
   ngOnInit(): void {
   }
-  clickEvent(): void{
-  console.log(this.msg)
-
+  clickEvent(): string{
+    this.msg='Button is Clicked';
+    return this.msg;
    
   }
 }
