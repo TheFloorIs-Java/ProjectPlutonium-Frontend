@@ -10,6 +10,7 @@ import { ViewAllUsersComponentComponent } from './component/view-all-users-compo
 import { DeleteUserComponentComponent } from './component/delete-user-component/delete-user-component.component';
 import { PutUserComponentComponent } from './component/put-user-component/put-user-component.component';
 import { RegisterUserComponentComponent } from './component/register-user-component/register-user-component.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegisterUserComponentComponent } from './component/register-user-compon
     ViewAllUsersComponentComponent,
     DeleteUserComponentComponent,
     PutUserComponentComponent,
-    RegisterUserComponentComponent
+    RegisterUserComponentComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
