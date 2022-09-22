@@ -7,13 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./admin-page-component.component.css']
 })
 export class AdminPageComponentComponent implements OnInit {
-  msg: boolean=false;
+  msg: String ="hi";
   constructor() { }
 
   ngOnInit(): void {
   }
   clickEvent(): void{
-   this.msg=!this.msg;
+  console.log(this.msg)
 
    
   }
@@ -24,6 +24,7 @@ export class AdminPageComponentComponent implements OnInit {
 
 
 //////////////////////Button click to load users
+/*
 let button = document.getElementById('loadButton');
 //button.onclick = loadUsers;
 button.onclick = 'hi';
@@ -42,11 +43,4 @@ function loadUsers(){
       }
   }
 }
-///////for loop to dispaly
-function loadSpan(response){
-
-  for(let i = 0; i < response.length; i++){
-      let pokemon = document.createElement("p");
-      pokemon.innerText = response[i].Users +" -";
-      content.appendChild(pokemon);
-  }}
+*/
