@@ -11,6 +11,7 @@ import { DeleteUserComponentComponent } from './component/delete-user-component/
 import { PutUserComponentComponent } from './component/put-user-component/put-user-component.component';
 import { RegisterUserComponentComponent } from './component/register-user-component/register-user-component.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HangmanGameComponentComponent } from './component/hangman-game-component/hangman-game-component.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     DeleteUserComponentComponent,
     PutUserComponentComponent,
     RegisterUserComponentComponent,
-    HomePageComponent
+    HomePageComponent,
+    HangmanGameComponentComponent
   ],
   imports: [
     BrowserModule,
