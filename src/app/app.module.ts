@@ -13,6 +13,7 @@ import { RegisterUserComponentComponent } from './component/register-user-compon
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavbarComponentComponent } from './component/navbar-component/navbar-component.component';
 import { GameInfoComponent } from './component/game-info/game-info.component';
+import { HangmanGameComponentComponent } from './component/hangman-game-component/hangman-game-component.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GameInfoComponent } from './component/game-info/game-info.component';
     RegisterUserComponentComponent,
     HomePageComponent,
     NavbarComponentComponent,
-    GameInfoComponent
+    GameInfoComponent,
+    HangmanGameComponentComponent
   ],
   imports: [
     BrowserModule,
