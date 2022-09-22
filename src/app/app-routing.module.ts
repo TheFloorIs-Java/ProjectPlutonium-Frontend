@@ -5,11 +5,11 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponentComponent } from './pages/login-page-component/login-page-component.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'login', component: LoginPageComponentComponent},
   {path: 'home', component: HomePageComponent},
   {path: 'admin', component: AdminPageComponentComponent},
-  {path: '**', component: LoginPageComponentComponent}
+  {path: '**', component: HomePageComponent}
 
 
 ];

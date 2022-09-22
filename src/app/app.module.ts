@@ -11,6 +11,8 @@ import { DeleteUserComponentComponent } from './component/delete-user-component/
 import { PutUserComponentComponent } from './component/put-user-component/put-user-component.component';
 import { RegisterUserComponentComponent } from './component/register-user-component/register-user-component.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { NavbarComponentComponent } from './component/navbar-component/navbar-component.component';
+import { GameInfoComponent } from './component/game-info/game-info.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     DeleteUserComponentComponent,
     PutUserComponentComponent,
     RegisterUserComponentComponent,
-    HomePageComponent
+    HomePageComponent,
+    NavbarComponentComponent,
+    GameInfoComponent
   ],
   imports: [
     BrowserModule,
