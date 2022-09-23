@@ -9,14 +9,22 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class AdminPageComponentComponent implements OnInit {
   msg!: string;
+  msg1!: string;
   constructor() { }
 
   ngOnInit(): void {
   }
   clickEvent(): string{
     this.msg='Button is Clicked';
-    return this.msg;
-   
+    return this.msg;}
+//////////////////////
+    clickEvent1(): string{
+      this.msg1='Extra Admin placeholder';
+      return this.msg1;}
+/////////////////////
+      public submitUserQ(){
+      //  this.adminInput = "";
+        
   }
 }
 

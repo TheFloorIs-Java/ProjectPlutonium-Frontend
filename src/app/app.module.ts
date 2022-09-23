@@ -17,6 +17,11 @@ import { GameInfoComponent } from './component/game-info/game-info.component';
 import { HangmanGameComponentComponent } from './component/hangman-game-component/hangman-game-component.component';
 import { FormsModule } from '@angular/forms';
 import { ZombieGameComponent } from './component/zombie-game/zombie-game.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { ProfileInfoComponent } from './component/profile-info/profile-info.component';
+import { ProfileStatsComponent } from './component/profile-stats/profile-stats.component';
+import { RulesComponent } from './pages/rules/rules.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +37,12 @@ import { ZombieGameComponent } from './component/zombie-game/zombie-game.compone
     NavbarComponentComponent,
     GameInfoComponent,
     HangmanGameComponentComponent,
-    ZombieGameComponent
+    ZombieGameComponent,
+    ProfilePageComponent,
+    ProfileInfoComponent,
+    ProfileStatsComponent,
+    RulesComponent,
+
   ],
   imports: [
     BrowserModule,
