@@ -6,8 +6,9 @@
         <div class="infobox">
 
                 <div class="description">
-                    <p class ="tab1">   {{description}}</p>
-
+                    
+                    <p class ="tab1">    {{description}}</p>
+             
 
                 </div>
 
@@ -21,7 +22,7 @@
 
             <div class="action-menu">
                 <div *ngFor = "let action of actions">
-                    <button (click)="changePage(action.index)">{{action.actionLabel}}</button>
+                    <button class="button-27" (click)="changePage(action.index)">{{action.actionLabel}}</button>
                 </div>
                 
             </div>
