@@ -1,6 +1,15 @@
 <p>hangman-game-component works!</p>
-<img src="{{hangmanImages[guesses]}}" alt="images">
-<p>{{hiddenWord}}</p>
-<input type="text" [(ngModel)] = "letterInput">
-<button (click)="submitGuess()">submit</button>
-<p>{{guessedAsString}}</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="width: 200px; border-style: solid; margin: 0; padding: 0;">
+        <img src="{{hangmanImages[guesses]}}" alt="images" style="width: 100%; height: 100%;">
+        
+    </div>
+    <div style="border-style: solid; margin: 0; padding: 0; width: 300px; top: 0; bottom: 0">
+        <p style="white-space: pre-wrap; overflow-wrap: break-word; padding-bottom:2em;">{{hiddenWord}}</p>
+        <p>{{guessedAsString}}</p>
+        <div>
+            <input type="text" [(ngModel)] = "letterInput">
+            <button (click)="submitGuess()">submit</button>
+        </div>
+    </div>
+</div>

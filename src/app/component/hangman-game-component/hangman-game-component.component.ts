@@ -23,20 +23,25 @@ export class HangmanGameComponentComponent implements OnInit {
   ]
 
   guesses: number = 0;
-  secretWord: string = "programming"
-  guessedLetters = new Set<string>().add(" ").add("a");
+  secretWord: string = "programming is really cool! Don't you think?"
+  guessedLetters = new Set<string>().add("a");
   guessedAsString: string = Array.from(this.guessedLetters.values()).join(" ");
   hiddenWord: string = this.hideWord();
 
+  
   public letterInput: any = "";
 
   private hideWord(){
     let strArr: Array<string> = this.secretWord.split("");
     for (let i = 0; i < strArr.length; i++){
-      if (!this.guessedLetters.has(strArr[i])){
+      if (strArr[i] == " "){
+        strArr[i] = "  ";
+      }
+      else if (!this.guessedLetters.has(strArr[i]) && !"!.,'?".includes(strArr[i])){
         strArr[i] = " _ ";
       }
     }
+    console.log(strArr.join(""));
     return strArr.join("");
   }
 
