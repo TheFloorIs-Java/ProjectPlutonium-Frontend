@@ -34,7 +34,7 @@ export class HangmanGameComponentComponent implements OnInit {
     let strArr: Array<string> = this.secretWord.split("");
     for (let i = 0; i < strArr.length; i++){
       if (!this.guessedLetters.has(strArr[i])){
-        strArr[i] = "_";
+        strArr[i] = " _ ";
       }
     }
     return strArr.join("");
