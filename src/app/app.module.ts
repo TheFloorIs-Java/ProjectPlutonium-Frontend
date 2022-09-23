@@ -14,6 +14,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavbarComponentComponent } from './component/navbar-component/navbar-component.component';
 import { GameInfoComponent } from './component/game-info/game-info.component';
 import { HangmanGameComponentComponent } from './component/hangman-game-component/hangman-game-component.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HangmanGameComponentComponent } from './component/hangman-game-componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

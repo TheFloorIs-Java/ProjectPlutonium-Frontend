@@ -12,4 +12,41 @@ export class HangmanGameComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  hangmanImages: Array<string> = [
+    "../../../assets/images/hangman0.png",
+    "../../../assets/images/hangman1.png",
+    "../../../assets/images/hangman2.png",
+    "../../../assets/images/hangman3.png",
+    "../../../assets/images/hangman4.png",
+    "../../../assets/images/hangman5.png",
+    "../../../assets/images/hangman6.png"
+  ]
+
+  guesses: number = 0;
+  secretWord: string = "programming"
+  guessedLetters = new Set<string>().add(" ").add("a");
+  guessedAsString: string = Array.from(this.guessedLetters.values()).join(" ");
+  hiddenWord: string = this.hideWord();
+
+  public letterInput: any = "";
+
+  private hideWord(){
+    let strArr: Array<string> = this.secretWord.split("");
+    for (let i = 0; i < strArr.length; i++){
+      if (!this.guessedLetters.has(strArr[i])){
+        strArr[i] = " _ ";
+      }
+    }
+    return strArr.join("");
+  }
+
+  public submitGuess(){
+      if(!this.secretWord.includes(this.letterInput)){
+        this.guesses += 1;
+      }
+      this.guessedLetters.add(this.letterInput);
+      this.hiddenWord = this.hideWord();
+      this.letterInput = "";
+      this.guessedAsString = Array.from(this.guessedLetters.values()).join(" ");
+  }
 }
