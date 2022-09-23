@@ -15,6 +15,7 @@ import { NavbarComponentComponent } from './component/navbar-component/navbar-co
 import { GameInfoComponent } from './component/game-info/game-info.component';
 import { HangmanGameComponentComponent } from './component/hangman-game-component/hangman-game-component.component';
 import { FormsModule } from '@angular/forms';
+import { ZombieGameComponent } from './component/zombie-game/zombie-game.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     HomePageComponent,
     NavbarComponentComponent,
     GameInfoComponent,
-    HangmanGameComponentComponent
+    HangmanGameComponentComponent,
+    ZombieGameComponent
   ],
   imports: [
     BrowserModule,
