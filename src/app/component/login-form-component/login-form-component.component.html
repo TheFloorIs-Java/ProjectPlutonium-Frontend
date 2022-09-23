@@ -1,2 +1,45 @@
-<p>login-form-component works!</p>
+<div class="container">
+    <div class="loginhtml">
 
+        <div class="header">
+            <p>Log In</p>
+        </div>
+
+            <div class="loginform">
+            <div class="card-html">
+                
+            <!--GROUP FOR USER FIELD-->
+            <div class="group">
+                <label for="user" class="label">username</label>
+
+                <input  [(ngModel)]="usernameInput" id="user" type="text" class="input" >
+
+            </div>
+            <!--GROUP FOR PASSWORD FIELD-->
+            <div class="group">
+                <label for="pass" class="label" >password</label>
+
+                <input [(ngModel)]="passwordInput" id="pass" type="password" class="input" data-type="password">
+
+            </div>
+            
+            <!--LOG IN BUTTON-->
+            <div class="group">
+                <button (click)="loginButtonPressed()" class="button-27" role="button" >Log In</button>
+            </div>
+
+            <div class="hr"></div>
+
+            <div class="foot-lnk">
+                <p style="color: rgb(236, 37, 37)">{{errorMessage}}</p>
+            </div>
+            
+        </div>
+        
+        </div>
+        <div class="footer">
+
+        </div>
+    
+    </div>
+</div>
