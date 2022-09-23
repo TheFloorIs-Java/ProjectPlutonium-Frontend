@@ -14,7 +14,7 @@ export class AdminPageComponentComponent implements OnInit {
   ngOnInit(): void {
   }
   clickEvent(): string{
-    this.msg='Button is Clicked. Space saved for User list JSON to be added';
+    this.msg='Button is Clicked';
     return this.msg;
    
   }
