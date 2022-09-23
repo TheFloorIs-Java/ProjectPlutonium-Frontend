@@ -23,7 +23,7 @@ export class HangmanGameComponentComponent implements OnInit {
   ]
 
   guesses: number = 0;
-  secretWord: string = "programming"
+  secretWord: string = "pokemon"
   guessedLetters = new Set<string>().add(" ").add("a");
   guessedAsString: string = Array.from(this.guessedLetters.values()).join(" ");
   hiddenWord: string = this.hideWord();
