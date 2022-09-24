@@ -19,7 +19,8 @@ import { ZombieGameComponent } from './component/zombie-game/zombie-game.compone
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { ProfileInfoComponent } from './component/profile-info/profile-info.component';
 import { ProfileStatsComponent } from './component/profile-stats/profile-stats.component';
-import { RulesComponent } from './pages/rules/rules.component';
+
+
 
 
 @NgModule({
@@ -40,7 +41,9 @@ import { RulesComponent } from './pages/rules/rules.component';
     ProfilePageComponent,
     ProfileInfoComponent,
     ProfileStatsComponent,
-    RulesComponent,
+
+  
+   
 
   ],
   imports: [
