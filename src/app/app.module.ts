@@ -20,7 +20,7 @@ import { ZombieGameComponent } from './component/zombie-game/zombie-game.compone
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { ProfileInfoComponent } from './component/profile-info/profile-info.component';
 import { ProfileStatsComponent } from './component/profile-stats/profile-stats.component';
-
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -53,7 +53,7 @@ import { ProfileStatsComponent } from './component/profile-stats/profile-stats.c
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
