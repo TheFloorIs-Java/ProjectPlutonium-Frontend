@@ -1,43 +1,4 @@
-<!--
-<nav class="navbar navbar-nav-center navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/" style="color: green;">Project Plutonium</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" style="color: green;">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-    </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> 
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" style="color: green;">Leaderboard</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" routerLink="/login" style="color: green;">Sign In</a>
-            </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle me-auto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: green;">
-              My profile
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" style="color: green;">Action</a></li>
-              <li><a class="dropdown-item" href="#" style="color: green;">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#" style="color: green;">Something else here</a></li>
-              <li><a class="dropdown-item" href="admin" style="color: green;">Admin</a></li> 
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
--->
+
 
 <head>
   <title>Project Plutonium</title>
@@ -51,8 +12,8 @@
   .mySlides {display: none}
   </style>
   </head>
-
-
+<body>
+<!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -74,3 +35,15 @@
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
 </div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top w3-show" style="margin-top:46px">
+  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
+  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+</div>
+
+
+<script src="navbar.js"></script>
+</body>

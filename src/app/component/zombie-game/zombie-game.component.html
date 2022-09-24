@@ -1,1 +1,37 @@
 <p>zombie-game works!</p>
+
+<body>
+
+    <div class="gamewrapper">
+        <div class="infobox">
+
+                <div class="description">
+                    
+                    <p class ="tab1">    {{description}}</p>
+             
+
+                </div>
+
+
+
+        </div>
+        <div class = "lowerbox" >
+            <div class="map">
+                <img class="image" src="{{map}}">
+            </div>
+
+            <div class="action-menu">
+                <div class="center" *ngFor = "let action of actions">
+                    <button class="button-27" (click)="changePage(action.index)">{{action.actionLabel}}</button>
+                </div>
+                
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+</body>

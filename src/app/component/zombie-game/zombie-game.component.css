@@ -1,0 +1,158 @@
+
+.body {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.gamewrapper {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    justify-content: space-between;
+    align-items: stretch;
+    border-style: solid;
+    border-color:black;
+}
+
+
+
+
+.infobox {
+    padding: 5px;
+    flex-grow: 1;
+    min-width: 4em;
+    max-width: 40em;
+    min-height: 20em;
+background-color: rgba(10, 15, 29, 0.822);
+
+}
+
+.description {
+    
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    text-align: left;
+    color:  #cfcfcf;
+}
+
+
+.lowerbox {
+    
+    display: flex;
+    flex-grow: 1;
+    
+    
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 20em;
+    min-height: 24em;
+    max-height: 24em;
+    background-color: rgba(104, 165, 165, 0);
+}
+
+.image {
+    object-fit: contain;
+    height: 100%;
+    width: 90%;
+}
+
+.action-menu {
+    
+    display: grid;
+    justify-content: stretch;
+    align-content: center;
+    flex-grow: 1;
+    min-width: 20em;
+    min-height: 18em;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+.button-27 {
+    appearance: none;
+    background-color: rgba(10, 15, 29, 0.822);
+    border: 2px solid  rgba(10, 15, 29, 0.486);
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #cfcfcf;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    margin: 2px;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 90%;
+    will-change: transform;
+  }
+
+  
+  .button-27:disabled {
+    pointer-events: none;
+  }
+  
+  .button-27:hover {
+    box-shadow: rgba(0, 0, 0, 0.459) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .button-27:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+  
+.tab1 {
+    white-space: pre-wrap; 
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+
+.gamewrapper {
+    max-width: 500px;
+    max-height: 900px;
+    background-color: #cfcfcf;
+    
+}
+
+.map {
+    background-color: #ffffff;
+}
+
+.image {
+    
+    max-width: 18em;
+    max-height: 18em;
+}
+
+.lowerbox {
+    display: block;
+}
+
+}
