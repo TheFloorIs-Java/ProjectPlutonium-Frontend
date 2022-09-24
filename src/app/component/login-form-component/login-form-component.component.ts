@@ -37,7 +37,7 @@ export class LoginFormComponentComponent implements OnInit {
         password: this.passwordInput
       },
       {responseType: 'text'}
-        ).subscribe(data=>console.log(data));
+        ).subscribe(data=>document.cookie = "token="+data+";");
     }
   }
 }
