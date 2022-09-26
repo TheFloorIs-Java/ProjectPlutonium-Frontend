@@ -5,6 +5,7 @@ import {user} from '../../Model/user';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router'
+import { publishedGame } from 'app/Model/publishedGame';
 
 @Component({
   selector: 'app-home-page',
@@ -25,7 +26,7 @@ export class HomePageComponent implements OnInit {
   sessionId : String = "";
   user : user|undefined = undefined;
   gameId : string|null = "";
-  publishedGame : String = "";
+  publishedGame : publishedGame | null = null;
 
 
   getUserSession() {
@@ -42,7 +43,7 @@ export class HomePageComponent implements OnInit {
   getGameById() {
 
     this.gameId = this.route.snapshot.paramMap.get('id');
-    this.http.get<any>("https://projectplutonium.azurewebsites.net/publishedGames/id/"+ this.gameId)
+    this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/id/"+ this.gameId)
     .subscribe(data => {this.publishedGame = data})
 
   }
