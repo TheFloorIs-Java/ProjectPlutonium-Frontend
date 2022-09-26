@@ -7,6 +7,9 @@ import { actionbutton } from 'app/Model/actionbutton';
   templateUrl: './zombie-game.component.html',
   styleUrls: ['./zombie-game.component.css']
 })
+
+
+
 export class ZombieGameComponent implements OnInit {
 
   constructor() { }
@@ -101,6 +104,8 @@ export class ZombieGameComponent implements OnInit {
 
   actions : Array<actionbutton> = this.data[0].actions;
 
+  gamename : String = "Zombie Survival";
+
   
 
   ngOnInit(): void {
@@ -108,11 +113,11 @@ export class ZombieGameComponent implements OnInit {
 
   }
 
-  changePage(scenenumber:number) {
+  changePage(sceneindex:number) {
 
-    this.description = this.data[scenenumber].description;
-    this.map = this.data[scenenumber].map;
-    this.actions = this.data[scenenumber].actions;
+    this.description = this.data[sceneindex].description;
+    this.map = this.data[sceneindex].map;
+    this.actions = this.data[sceneindex].actions;
 
   }
 

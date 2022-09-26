@@ -12,20 +12,17 @@ export class NavbarComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //x
+
+  clicked : boolean = false;
+ 
 
 
   myFunction() {
-    
-    //if (x.className.indexOf("w3-show") == -1) {
-    //  x.className += " w3-show";
-  //  } else { 
-   //   x.className = x.className.replace(" w3-show", "");
-    }
-
+     
+    this.clicked = !this.clicked;
     
   }
 
 
 
-
+}
