@@ -10,13 +10,13 @@
 <p style=" color: green;">{{msg}}</p>
 
 <hr>
-<p style=" color: green;">Other Admin Fuctionality:</p>
+<p style=" color: green;">Users:</p>
 <p></p>
 <button  (click)="getUsers()" style="color: darkblue; background-color: lightcyan;" >
-    admin event</button>
+    List Users</button>
  <!-- <p *ngIf = "msg">User List:</p> --> 
  <div *ngFor ="let u of data">
-<p id="comp-render"  style=" color: green;">{{u}}</p> </div>
+<p id="comp-render"  style=" color: green;">{{u.username}}</p> </div>
 <hr>
 
 <p style=" color: green;">Search Function</p>
