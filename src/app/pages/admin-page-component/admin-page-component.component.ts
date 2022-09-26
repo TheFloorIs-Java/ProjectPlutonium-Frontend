@@ -30,13 +30,13 @@ export class AdminPageComponentComponent implements OnInit {
         
   }
   //////
- display =false
+   data:Array<Object> | undefined;
   getUsers(){
-    this.http.get("http://projectplutonium.azurewebsites.net/users/all",
+    this.http.get<Array <Object>>("https://projectplutonium.azurewebsites.net/users/all",
     {
       responseType:'json'
-    }) .subscribe(data=> console.log(data));
-this.display=true;
+    }) .subscribe(data=>  this.data=data);
+return this.data;
   }
 }
 
