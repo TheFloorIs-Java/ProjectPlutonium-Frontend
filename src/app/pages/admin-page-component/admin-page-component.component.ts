@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-
+import {user} from '../../Model/user';
 @Component({
   selector: 'app-admin-page-component',
   templateUrl: './admin-page-component.component.html',
@@ -30,38 +30,18 @@ export class AdminPageComponentComponent implements OnInit {
         
   }
   //////
-   data:Array<Object> | undefined;
+   data:Array<user> | undefined;
   getUsers(){
-    this.http.get<Array <Object>>("https://projectplutonium.azurewebsites.net/users/all",
+    this.http.get<Array <user>>("https://projectplutonium.azurewebsites.net/users/all",
     {
       responseType:'json'
     }) .subscribe(data=>  this.data=data);
 return this.data;
   }
+
+  
 }
 
 
 
 
-
-//////////////////////Button click to load users
-/*
-let button = document.getElementById('loadButton');
-//button.onclick = loadUsers;
-button.onclick = 'hi';
-function loadUsers(){
-  let request = new XMLHttpRequest();
-  request.open("GET", "http://localhost:9004/Users");
-  request.send();
-
-  request.onreadystatechange = load;
-
-  function load(){
-      if(request.readyState == 4 && request.status == 200){
-          let responsejson = JSON.parse(request.response);
-          console.log(responsejson);
-          loadSpan(responsejson);
-      }
-  }
-}
-*/
