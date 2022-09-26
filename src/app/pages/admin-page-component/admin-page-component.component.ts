@@ -38,6 +38,8 @@ export class AdminPageComponentComponent implements OnInit {
     }) .subscribe(data=>  this.data=data);
 return this.data;
   }
+
+  
 }
 
 
