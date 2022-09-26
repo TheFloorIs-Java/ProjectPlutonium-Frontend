@@ -2,6 +2,9 @@ import { Component, OnInit, } from '@angular/core';
 import {ZombieGameComponent} from '../../component/zombie-game/zombie-game.component';
 import { HttpClient } from '@angular/common/http';
 import {user} from '../../Model/user';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-home-page',
@@ -10,9 +13,9 @@ import {user} from '../../Model/user';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private http :HttpClient) { }
+  constructor(private http :HttpClient, private cookieService : CookieService, private router: Router, private route: ActivatedRoute) { }
 
-  //gamename = gamename;
+ 
 
   ngOnInit(): void {
     this.getUserSession();
@@ -20,19 +23,40 @@ export class HomePageComponent implements OnInit {
 
   
   sessionId : String = "";
+  user : user|undefined = undefined;
+  gameId : string|null = "";
+  publishedGame : String = "";
+
 
   getUserSession() {
-
-    this.http.get("https://projectplutonium.azurewebsites.net/users/session",
-    {
-      responseType: 'json'
+    
+      this.http.get<user>("https://projectplutonium.azurewebsites.net/users/session",
+        {
+          headers: { session: this.cookieService.get("session") },
+          responseType: 'json'
+        }
+      ).subscribe(data => {this.user = data}, error => { this.router.navigate(['/login']) });
     }
 
-    ).subscribe(sessionId => this.sessionId);
-    console.log(this.sessionId);
+
+  getGameById() {
+
+    this.gameId = this.route.snapshot.paramMap.get('id');
+    this.http.get<any>("https://projectplutonium.azurewebsites.net/publishedGames/id/"+ this.gameId)
+    .subscribe(data => {this.publishedGame = data})
 
   }
 
 
 
-}
+
+  }
+
+
+
+
+
+
+
+
+
