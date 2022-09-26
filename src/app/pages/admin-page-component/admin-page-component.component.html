@@ -12,13 +12,13 @@
 <hr>
 <p style=" color: green;">Other Admin Fuctionality:</p>
 <p></p>
-<button  (click)="clickEvent1()" style="color: darkblue; background-color: lightcyan;" >
+<button  (click)="getUsers()" style="color: darkblue; background-color: lightcyan;" >
     admin event</button>
  <!-- <p *ngIf = "msg">User List:</p> --> 
-<p style=" color: green;">{{msg1}}</p>
+<p id="comp-render" *ngIf ="display" style=" color: green;"></p>
 <hr>
 
 <p style=" color: green;">Search Function</p>
 <input type="text" >
-            <button (click)="submitUserQ()" style="color: darkblue; background-color: lightcyan;">submit</button>
+         <!--  <button (click)="submitUserQ()" style="color: darkblue; background-color: lightcyan;">submit</button> -->
 </body>
