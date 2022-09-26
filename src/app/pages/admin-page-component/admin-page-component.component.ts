@@ -10,7 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AdminPageComponentComponent implements OnInit {
   msg!: string;
   msg1!: string;
-  constructor() { }
+  constructor(private http :HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -18,13 +18,25 @@ export class AdminPageComponentComponent implements OnInit {
     this.msg='Button is Clicked';
     return this.msg;}
 //////////////////////
-    clickEvent1(): string{
+   /* clickEvent1(): string{
       this.msg1='Extra Admin placeholder';
-      return this.msg1;}
+      return this.msg1;} */
 /////////////////////
-      public submitUserQ(){
-      //  this.adminInput = "";
+      public postEX(){
+        this.http.post("http://projectplutonium.azurewebsites.net/users/all",
+    {
+      responseType:'text'
+    }) .subscribe(data=> console.log(data));
         
+  }
+  //////
+   data:Array<Object> | undefined;
+  getUsers(){
+    this.http.get<Array <Object>>("https://projectplutonium.azurewebsites.net/users/all",
+    {
+      responseType:'json'
+    }) .subscribe(data=>  this.data=data);
+return this.data;
   }
 }
 
