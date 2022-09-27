@@ -12,7 +12,9 @@
     <div class="column middle" style="background-color: rgba(255, 255, 255, 0.822);">
       <p clas="gamelabel"> Zombie Surival </p>
     <!--<app-hangman-game-component></app-hangman-game-component>-->
-    <app-zombie-game></app-zombie-game>
+    <div *ngIf="gameData.length > 0">
+      <app-zombie-game [data]="gameData"></app-zombie-game>
+    </div>
     </div>
     
     <div class="column side" style="background-color:rgb(255, 255, 255);"> </div>

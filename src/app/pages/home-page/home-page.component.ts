@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { publishedGame } from 'app/Model/publishedGame';
 import { DatePipe, JsonPipe } from '@angular/common';
+import { scene } from 'app/Model/scene';
 
 @Component({
   selector: 'app-home-page',
@@ -44,7 +45,7 @@ export class HomePageComponent implements OnInit {
   gameDate : string|null = "";
   publishedGame : publishedGame | null = null;
   
-
+  gameData : Array<scene> = [];
 
 
   
@@ -77,8 +78,8 @@ export class HomePageComponent implements OnInit {
     }else {
     this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/id/"+ this.gameId)
     .subscribe(data => {this.publishedGame = data;
-      JSON.parse(this.publishedGame.gameData);
-      console.log(data);
+      console.log(this.publishedGame.gameData)
+      this.gameData = JSON.parse(this.publishedGame.gameData);
     })
 
    }     
