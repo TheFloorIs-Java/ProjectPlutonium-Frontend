@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Game } from 'app/Model/game';
+import { publishedGame } from 'app/Model/publishedGame';
+import { user } from 'app/Model/user';
 
 @Component({
   selector: 'app-profile-stats',
@@ -8,25 +10,36 @@ import { Game } from 'app/Model/game';
 })
 export class ProfileStatsComponent implements OnInit {
 
-  placeholderGamesMade : Array<Game> = [
+  placeholderGamesMade : Array<publishedGame> = [
     {
+      id: 1,
       title: "Game 1",
-      gameID: 1,
-      userID: 1
+      gameType: "Zombie",
+      gameData:"",
+      user: {}as user,
+      numberOfPlays : 0
     },
     {
+      id: 1,
       title: "Game 2",
-      gameID: 2,
-      userID: 1
+      gameType: "Zombie",
+      gameData:"",
+      user: {}as user,
+      numberOfPlays : 0
     },
     {
+      id: 1,
       title: "Game 3",
-      gameID: 3,
-      userID: 1
+      gameType: "Zombie",
+      gameData:"",
+      user: {}as user,
+      numberOfPlays : 0
     }
   ]
 
-  //gamesmade: Array<String> = this.getGamesMade(); 
+  @Input()
+  user : user = {}as user;
+  gamesCreated : Array<String> = this.getGamesMade();
   score : number = this.getScore();
   rank : number = this.getRank();
   avgscore : number = this.getAvgScore();
@@ -48,11 +61,12 @@ export class ProfileStatsComponent implements OnInit {
     return 6;
   }
 
-  /*getGamesMade(): Array<String> {
-    for (let i = 0; i< this.placeholderGamesMade.length; i++) {
-      this.gamesmade[i] = this.placeholderGamesMade[i].title;
+  getGamesMade(): Array<String> {
+    let gamesmade: String[] = [];
+    for(let i = 0; i < this.placeholderGamesMade.length; i++) {
+      gamesmade[i] = this.placeholderGamesMade[i].title;
     }
-    return this.gamesmade;
+    return gamesmade;
   }
-*/
+
 }
