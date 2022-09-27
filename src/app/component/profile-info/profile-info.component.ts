@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { user } from 'app/Model/user';
 
 @Component({
   selector: 'app-profile-info',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileInfoComponent implements OnInit {
 
-  username : String = this.getUsername();
+  @Input()
+  user : user = {}as user;
   url : String = this.getProfilePicture();
   bio : String = this.getBio();
 

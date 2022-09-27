@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>LeaderBoard</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Username</td>
+                <td>Score</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.user.username}}</td>
+                <td>{{user.score}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

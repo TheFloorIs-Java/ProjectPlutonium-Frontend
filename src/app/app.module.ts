@@ -22,6 +22,7 @@ import { ProfileInfoComponent } from './component/profile-info/profile-info.comp
 import { ProfileStatsComponent } from './component/profile-stats/profile-stats.component';
 import { CookieService } from 'ngx-cookie-service';
 import { DatePipe } from '@angular/common';
+import { LeaderBoardComponent } from './pages/leader-board/leader-board.component';
 
 
 
@@ -45,6 +46,7 @@ import { DatePipe } from '@angular/common';
     ProfilePageComponent,
     ProfileInfoComponent,
     ProfileStatsComponent,
+    LeaderBoardComponent,
 
   
    

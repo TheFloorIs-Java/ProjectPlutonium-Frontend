@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { DeleteUserComponentComponent } from 'app/component/delete-user-component/delete-user-component.component';
 import {user} from '../../Model/user';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-admin-page-component',
   templateUrl: './admin-page-component.component.html',
@@ -11,7 +12,7 @@ import {user} from '../../Model/user';
 export class AdminPageComponentComponent implements OnInit {
   msg!: string;
   msg1!: string;
-  constructor(private http :HttpClient) { }
+  constructor(private http :HttpClient, private cookieService : CookieService) { }
 
   ngOnInit(): void {
   }
@@ -40,8 +41,23 @@ export class AdminPageComponentComponent implements OnInit {
 return this.data;
   }
 //////////
+inputUserName: String="";
+inputUserPassword: string ="";
+inputUserLevel: number =0;
   submitUserQ(){
-//inputUserName: this inputUserName,
+//inputUserName: this.inputUserName,
+//inputUserPassword: this.inputUserPassword,
+this.http.post("https://projectplutonium.azurewebsites.net/login", 
+        {
+          username: this.inputUserName,
+          password: this.inputUserPassword,
+          level: this.inputUserLevel
+        },
+        {
+          responseType: 'text'
+        }
+      ).subscribe(data=> this.cookieService.set("session", data));
+
   }
 ///////////////
 deleteUser(){
