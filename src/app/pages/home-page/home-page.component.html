@@ -13,7 +13,7 @@
       <p clas="gamelabel"> Zombie Surival </p>
     <!--<app-hangman-game-component></app-hangman-game-component>-->
     <div *ngIf="gameData.length > 0">
-      <app-zombie-game [data]="gameData"></app-zombie-game>
+      <app-zombie-game [data]="gameData" [user]="user" [publishedGame]="publishedGame"></app-zombie-game>
     </div>
     </div>
     
