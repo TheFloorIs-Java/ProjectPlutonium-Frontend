@@ -41,22 +41,23 @@ export class AdminPageComponentComponent implements OnInit {
 return this.data;
   }
 //////////
+
 inputUserName: String="";
 inputUserPassword: string ="";
 inputUserLevel: number =0;
   submitUserQ(){
 //inputUserName: this.inputUserName,
 //inputUserPassword: this.inputUserPassword,
-this.http.post("https://projectplutonium.azurewebsites.net/login", 
+this.http.post<Array <user>>("https://projectplutonium.azurewebsites.net/users", 
         {
           username: this.inputUserName,
           password: this.inputUserPassword,
-          level: this.inputUserLevel
+          pemissionLevel: this.inputUserLevel
         },
         {
-          responseType: 'text'
+          responseType: 'json'
         }
-      ).subscribe(data=> this.cookieService.set("session", data));
+      ).subscribe(data=> console.log(data));  //cookieService.set("session", data));
 
   }
 ///////////////
