@@ -34,16 +34,16 @@ export class HomePageComponent implements OnInit {
  
 
   ngOnInit(): void {
-    this.getUserSession();
+    this.getUserBySession();
     this.getGameById();
   }
 
   
   sessionId : String = "";
-  user : user|undefined = undefined;
+  user : user = {}as user;
   gameId : string|null = "";
   gameDate : string|null = "";
-  publishedGame : publishedGame | null = null;
+  publishedGame : publishedGame = {}as publishedGame;
   
   gameData : Array<scene> = [];
 
@@ -52,7 +52,7 @@ export class HomePageComponent implements OnInit {
   
 
 
-  getUserSession() {
+  getUserBySession() {
     
       this.http.get<user>("https://projectplutonium.azurewebsites.net/users/session",
         {
@@ -88,11 +88,15 @@ export class HomePageComponent implements OnInit {
 
   getGameByDate() {
 
-      
+    console.log(this.currentDate);
       this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/date/"+ this.currentDate)
-      .subscribe(data => {this.publishedGame = data})
+      .subscribe(data => {this.publishedGame = data;
+      this.gameData = JSON.parse(this.publishedGame.gameData);
+
+    })
 
     }
+
 
 
   }
