@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DeleteUserComponentComponent } from 'app/component/delete-user-component/delete-user-component.component';
 import {user} from '../../Model/user';
 import { CookieService } from 'ngx-cookie-service';
+import { identifierName } from '@angular/compiler';
 @Component({
   selector: 'app-admin-page-component',
   templateUrl: './admin-page-component.component.html',
@@ -41,24 +42,41 @@ export class AdminPageComponentComponent implements OnInit {
 return this.data;
   }
 //////////
-inputUserName: String="";
+
+public inputUserName: string="";
 inputUserPassword: string ="";
 inputUserLevel: number =0;
+id: number=0;
   submitUserQ(){
-//inputUserName: this.inputUserName,
-//inputUserPassword: this.inputUserPassword,
-this.http.post("https://projectplutonium.azurewebsites.net/login", 
+
+this.http.post<Array <user>>("https://projectplutonium.azurewebsites.net/users", 
         {
           username: this.inputUserName,
           password: this.inputUserPassword,
-          level: this.inputUserLevel
+          permissionLevel: this.inputUserLevel
         },
         {
-          responseType: 'text'
+          responseType: 'json'
         }
-      ).subscribe(data=> this.cookieService.set("session", data));
+      ).subscribe(data=> console.log(data));  
 
   }
+  //////
+  changeUser(){
+
+    this.http.put<Array <user>>("https://projectplutonium.azurewebsites.net/users", 
+           {
+              id: this.id,
+              username: this.inputUserName,
+              password: this.inputUserPassword,
+              permissionLevel: this.inputUserLevel
+            },
+            {
+              responseType: 'json'
+            }
+          )//.subscribe(data=> console.log(data));  
+    
+      }
 ///////////////
 deleteUser(){
 
