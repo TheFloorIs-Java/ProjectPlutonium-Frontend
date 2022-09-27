@@ -40,6 +40,9 @@ export class AdminPageComponentComponent implements OnInit {
 return this.data;
   }
 //////////
+inputUserName: String="";
+inputUserPassword: string ="";
+inputUserLevel: number =0;
   submitUserQ(){
 //inputUserName: this inputUserName,
   }

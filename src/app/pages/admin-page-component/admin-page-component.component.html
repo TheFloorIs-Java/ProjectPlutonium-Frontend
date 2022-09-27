@@ -21,9 +21,9 @@
 
 <div>
 <p style=" color: green;">
-Add User Name:<input type="text" id="inputUserName" >
-Add Password: <input type="text" id="inputUserPassword" >
-Add User Level:<input type="number" id="inputUserLevel"> 
+Add User Name:<input type="text" [(ngModel)]="inputUserName" >
+Add Password: <input type="text" [(ngModel)]="inputUserPassword" >
+Add User Level:<input type="number" [(ngModel)]="inputUserLevel"> 
      <button (click)="submitUserQ()" style="color: darkblue; background-color: lightcyan;">submit</button> </p> </div>
 <hr>
  <div>        <p style=" color: green;">Delete user
