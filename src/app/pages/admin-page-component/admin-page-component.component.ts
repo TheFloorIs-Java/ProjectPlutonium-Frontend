@@ -74,7 +74,7 @@ this.http.post<Array <user>>("https://projectplutonium.azurewebsites.net/users",
             {
               responseType: 'json'
             }
-          ).subscribe(data=> console.log(data));  
+          )//.subscribe(data=> console.log(data));  
     
       }
 ///////////////
