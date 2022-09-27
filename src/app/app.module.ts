@@ -23,6 +23,8 @@ import { ProfileStatsComponent } from './component/profile-stats/profile-stats.c
 import { CookieService } from 'ngx-cookie-service';
 import { DatePipe } from '@angular/common';
 import { LeaderBoardComponent } from './pages/leader-board/leader-board.component';
+import { CreatePageComponent } from './pages/create-page/create-page.component';
+import { AdventureBuilderComponent } from './component/adventure-builder/adventure-builder.component';
 
 
 
@@ -47,6 +49,8 @@ import { LeaderBoardComponent } from './pages/leader-board/leader-board.componen
     ProfileInfoComponent,
     ProfileStatsComponent,
     LeaderBoardComponent,
+    CreatePageComponent,
+    AdventureBuilderComponent,
 
   
    

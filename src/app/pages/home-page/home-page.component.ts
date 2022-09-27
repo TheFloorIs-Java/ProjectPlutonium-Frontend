@@ -59,7 +59,7 @@ export class HomePageComponent implements OnInit {
           headers: { session: this.cookieService.get("session") },
           responseType: 'json'
         }
-      ).subscribe(data => {this.user = data}, error => { this.router.navigate(['/login']) });
+      ).subscribe(data => {this.user = data}, error => { console.log(error) });
     }
 
 
