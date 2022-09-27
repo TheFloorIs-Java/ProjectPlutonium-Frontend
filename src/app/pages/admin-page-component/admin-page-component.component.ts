@@ -1,5 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { DeleteUserComponentComponent } from 'app/component/delete-user-component/delete-user-component.component';
 import {user} from '../../Model/user';
 @Component({
   selector: 'app-admin-page-component',
@@ -38,7 +39,14 @@ export class AdminPageComponentComponent implements OnInit {
     }) .subscribe(data=>  this.data=data);
 return this.data;
   }
+//////////
+  submitUserQ(){
 
+  }
+///////////////
+deleteUser(){
+  
+}
   
 }
 
