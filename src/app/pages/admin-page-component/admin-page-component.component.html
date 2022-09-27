@@ -2,18 +2,18 @@
 <p  style=" color: green;">Admin Page</p>
 <br>
 <hr>
-<p style=" color: green;">List of Users:</p>
+<p style=" color: green;">Admin function 1:</p>
 <p></p>
 <button  (click)="clickEvent()" style="color: darkblue; background-color: lightcyan;" >
-    Load Users</button>
+    empty button</button>
  <!-- <p *ngIf = "msg">User List:</p> --> 
 <p style=" color: green;">{{msg}}</p>
 
 <hr>
-<p style=" color: green;">Users:</p>
+<p style=" color: green;">List of Users:</p>
 <p></p>
 <button  (click)="getUsers()" style="color: darkblue; background-color: lightcyan;" >
-    List Users</button>
+    Users</button>
 
  <div *ngFor ="let u of data">
 <p id="comp-render"  style=" color: green;">{{u.username}}- Permission Level: {{u.permissionLevel}}</p> </div>
