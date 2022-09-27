@@ -41,11 +41,11 @@ return this.data;
   }
 //////////
   submitUserQ(){
-
+//inputUserName: this inputUserName,
   }
 ///////////////
 deleteUser(){
-  
+
 }
   
 }
