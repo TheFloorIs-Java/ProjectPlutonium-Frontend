@@ -21,6 +21,9 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { ProfileInfoComponent } from './component/profile-info/profile-info.component';
 import { ProfileStatsComponent } from './component/profile-stats/profile-stats.component';
 import { CookieService } from 'ngx-cookie-service';
+import { DatePipe } from '@angular/common';
+
+
 
 
 
@@ -53,7 +56,10 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [CookieService],
+  providers: [
+    CookieService,
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,30 +3,52 @@ import {ZombieGameComponent} from '../../component/zombie-game/zombie-game.compo
 import { HttpClient } from '@angular/common/http';
 import {user} from '../../Model/user';
 import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router'
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { publishedGame } from 'app/Model/publishedGame';
+import { DatePipe, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
+  providers: [DatePipe]
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private http :HttpClient, private cookieService : CookieService, private router: Router, private route: ActivatedRoute) { }
+  
+  newDate = new Date();
+  currentDate : string | null = "";
+  constructor(private http :HttpClient, private cookieService : CookieService, private router: Router, private route: ActivatedRoute, private datePipe: DatePipe) { 
+    
+    this.currentDate = this.datePipe.transform(this.newDate, 'yyyy-MM-dd');
+
+    this.route.queryParams.subscribe(data => {
+      this.gameId = data['id'];
+    });
+
+    console.log(this.gameId);
+
+  }
 
  
 
   ngOnInit(): void {
     this.getUserSession();
+    this.getGameById();
   }
 
   
   sessionId : String = "";
   user : user|undefined = undefined;
   gameId : string|null = "";
+  gameDate : string|null = "";
   publishedGame : publishedGame | null = null;
+  
+
+
+
+  
+  
 
 
   getUserSession() {
@@ -40,15 +62,36 @@ export class HomePageComponent implements OnInit {
     }
 
 
-  getGameById() {
+  logOut() {
 
-    this.gameId = this.route.snapshot.paramMap.get('id');
-    this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/id/"+ this.gameId)
-    .subscribe(data => {this.publishedGame = data})
 
   }
 
 
+  getGameById() {
+
+    if(this.gameId == null){
+      this.getGameByDate();
+      console.log(this.currentDate);
+
+    }else {
+    this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/id/"+ this.gameId)
+    .subscribe(data => {this.publishedGame = data;
+      JSON.parse(this.publishedGame.gameData);
+      console.log(data);
+    })
+
+   }     
+  }
+
+
+  getGameByDate() {
+
+      
+      this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/date/"+ this.currentDate)
+      .subscribe(data => {this.publishedGame = data})
+
+    }
 
 
   }
