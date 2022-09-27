@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { scene } from 'app/Model/scene';
+
 
 @Component({
   selector: 'app-create-page',
@@ -11,5 +13,7 @@ export class CreatePageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  gameData : Array<scene> = [];
 
 }
