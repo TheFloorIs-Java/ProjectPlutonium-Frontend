@@ -81,9 +81,23 @@ this.http.post<Array <user>>("https://projectplutonium.azurewebsites.net/users",
 deleteUser(){
 
 }
+///////////////
+submitGameofDay(){
+  this.http.put<Array <user>>("https://projectplutonium.azurewebsites.net/publishedGames", 
+           {
+              id: this.id,
+              username: this.inputUserName,
+              password: this.inputUserPassword,
+              permissionLevel: this.inputUserLevel
+            },
+            {
+              responseType: 'json'
+            }
+          )//.subscribe(data=> console.log(data));  
+}
   
 }
-
+/////////////////////
 
 
 
