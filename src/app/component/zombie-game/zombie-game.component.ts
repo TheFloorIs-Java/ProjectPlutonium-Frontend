@@ -50,12 +50,13 @@ export class ZombieGameComponent implements OnInit {
     this.changePage(0,0);
   }
 
-  changePage(sceneindex:number, killcount:number) {
+  changePage(sceneindex:number, killcount:number|undefined) {
 
     this.description = this.data[sceneindex].description;
     this.map = this.data[sceneindex].map;
     this.actions = this.data[sceneindex].actions;
-    this.killcount += killcount;
+    if (killcount != undefined)
+      this.killcount+= killcount;
 
   }
 

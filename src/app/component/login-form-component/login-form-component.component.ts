@@ -40,9 +40,12 @@ export class LoginFormComponentComponent implements OnInit {
         {
           responseType: 'text'
         }
-      ).subscribe(data=> this.cookieService.set("session", data));
+      ).subscribe(data=> {
+        this.cookieService.set("session", data);
+        this.router.navigate(['/home']);
+      });
 
-      this.router.navigate(['/home'])
+
 
 
       this.errorMessage = "";
