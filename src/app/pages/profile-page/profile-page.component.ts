@@ -25,9 +25,7 @@ export class ProfilePageComponent implements OnInit {
   ngOnInit() {
 
     if (this.id == null) {
-      //load page with user info from param
-      console.log("get caught");
-      
+           
       this.http.get<user>("https://projectplutonium.azurewebsites.net/users/session",
         {
           headers: { session: this.cookieService.get("session") },

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Game } from 'app/Model/game';
 import { publishedGame } from 'app/Model/publishedGame';
 import { user } from 'app/Model/user';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile-stats',
@@ -39,32 +39,28 @@ export class ProfileStatsComponent implements OnInit {
 
   @Input()
   user : user = {}as user;
-  gamesCreated : Array<String> = this.getGamesMade();
-  score : number = this.getScore();
-  rank : number = this.getRank();
-  avgscore : number = this.getAvgScore();
+  gamesCreated : Array<publishedGame> = [];
+  stringGamesCreated : Array<String> = [];
+  pg : publishedGame = {}as publishedGame;
 
-  constructor() { }
+  score : number = 0;
+  rank : number = 1;
+  avgscore : number = 0;
+
+  constructor(private http :HttpClient) { }
 
   ngOnInit(): void {
+
+    this.http.get<Array<publishedGame>>("https://projectplutonium.azurewebsites.net/publishedGames/userId/{id}" + this.user.id)
+      .subscribe(data => {this.gamesCreated = data});
+
+      this.stringGamesCreated = this.getStringGamesCreated();
   }
 
-  getScore() : number {
-    return 5;
-  }
-
-  getRank() : number {
-    return 1;
-  }
-
-  getAvgScore() : number {
-    return 6;
-  }
-
-  getGamesMade(): Array<String> {
+  getStringGamesCreated(): Array<String> {
     let gamesmade: String[] = [];
-    for(let i = 0; i < this.placeholderGamesMade.length; i++) {
-      gamesmade[i] = this.placeholderGamesMade[i].title;
+    for(let i = 0; i < this.gamesCreated.length; i++) {
+      gamesmade[i] = this.gamesCreated[i].title;
     }
     return gamesmade;
   }
