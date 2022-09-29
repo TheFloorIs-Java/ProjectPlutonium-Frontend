@@ -15,9 +15,10 @@ describe('ZombieGameComponent', () => {
     fixture = TestBed.createComponent(ZombieGameComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+
 });
