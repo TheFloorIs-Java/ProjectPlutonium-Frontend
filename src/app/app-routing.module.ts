@@ -5,6 +5,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LeaderBoardComponent } from './pages/leader-board/leader-board.component';
 import { LoginPageComponentComponent } from './pages/login-page-component/login-page-component.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { CreatePageComponent } from './pages/create-page/create-page.component';
 //import { RulesComponent } from './pages/rules/rules.component';
 
 const routes: Routes = [
@@ -15,7 +16,9 @@ const routes: Routes = [
   {path: 'admin', component: AdminPageComponentComponent},
   {path: 'profile', component: ProfilePageComponent},
   {path: 'leaderboard', component: LeaderBoardComponent},
-  {path: '**', component: HomePageComponent},  
+  {path: 'create', component: CreatePageComponent},  
+  {path: '**', component: HomePageComponent},
+
 ];
 
 @NgModule({

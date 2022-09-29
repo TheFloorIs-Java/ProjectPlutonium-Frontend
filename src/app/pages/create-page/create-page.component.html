@@ -1,18 +1,19 @@
 <body>
 
+
     <div class="header">
       <h2>Create Info</h2>
-      <p class="subheader">Welcome! Check out today's challenge below!</p>
+      <p class="subheader">Build your own adventure here!</p>
     </div>
     
     <div class="row">
       <div class="column side" style="background-color:rgb(252, 252, 252);"> </div>
       <div class="column middle" style="background-color: rgba(255, 255, 255, 0.822);">
         <p clas="gamelabel"> Zombie Surival </p>
-      <!--<app-hangman-game-component></app-hangman-game-component>-->
-      <div *ngIf="gameData.length > 0">
-        <app-zombie-game [data]="gameData"></app-zombie-game>
-      </div>
+        <app-adventure-builder></app-adventure-builder>
+
+
+
       </div>
       
       <div class="column side" style="background-color:rgb(255, 255, 255);"> </div>
@@ -21,5 +22,5 @@
     <div class="footer">
       <p>Footer</p>
     </div>
-    
+
     </body>

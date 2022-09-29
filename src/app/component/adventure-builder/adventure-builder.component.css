@@ -1,0 +1,20 @@
+.window {
+    display:flex;
+    align-items:stretch;
+    border-style: solid;
+    width:100%;
+    padding-top:56.25%;
+    background-color:rgb(241, 109, 109);
+    color: red;
+}
+
+.scene-list, .action-editor {
+    flex-grow: 0.2;
+    background-color: grey;
+    max-width:100%;
+}
+.scene-editor {
+    flex-grow: 0.6;
+    background-color:white;
+    max-width:100%;
+}
