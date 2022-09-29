@@ -34,7 +34,7 @@ logOut() {
       sessionStorage.clear();
       localStorage.clear();
       this.cookieService.deleteAll();
-      this.checkLogin();
+      
    }
 
   }

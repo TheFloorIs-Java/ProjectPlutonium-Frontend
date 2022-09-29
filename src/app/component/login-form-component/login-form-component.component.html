@@ -7,6 +7,7 @@
 
             <div class="loginform">
             <div class="card-html">
+                <div class="middle-block">
                 
             <!--GROUP FOR USER FIELD-->
             <div class="group">
@@ -20,8 +21,8 @@
                 <label for="pass" class="label" >password</label>
 
                 <input [(ngModel)]="passwordInput" id="pass" type="password" class="input" data-type="password">
-
             </div>
+                </div>
             
             <!--LOG IN BUTTON-->
             <div class="group">
@@ -31,7 +32,7 @@
             <div class="hr"></div>
 
             <div class="foot-lnk">
-                <p style="color: rgb(236, 37, 37)">{{errorMessage}}</p>
+                <p class="errorMessage" style="color: rgba(230, 70, 70, 0.938)">{{errorMessage}}</p>
             </div>
             
         </div>

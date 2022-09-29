@@ -1,10 +1,23 @@
 .hr {
-    margin:60px 0 50px 0;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    
+    width: 0%;
+    min-width: 20%;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 2vh;
+    border: none;
+    border-bottom: 1px solid #666;
+    position: relative;
+    transition: box-shadow 200ms ease-in-out;
+    box-shadow: 0px 0px 0px 0px #f9f9f9;
+
 }
 
+.errorMessage{
+    
+    font-weight: 500;
+    text-shadow: 0px 2px 2px #0e0b0a;
+}
 
 
 body{
@@ -31,20 +44,25 @@ body{
 }
 
 .header {
+    
+    color:#fff;
     font-size:22px;
 	margin-right:15px;
 	padding-bottom:5px;
-	margin:0 15px 10px 0;
-	display:inline-block;
+    display: flex;
+    justify-content: center;
+    margin:auto;
+    margin-bottom:5vh;
 	border-bottom:2px solid transparent;
 }
 
 .loginhtml {
+    
     width:100%;
 	height:100%;
 	position:absolute;
 	padding:90px 70px 50px 70px;
-	background:rgba(40,57,101,.9);
+	background:rgba(2, 7, 19, 0.767);
 }
 
 .card-html {
@@ -54,7 +72,12 @@ body{
 	bottom:0;
 	position:absolute;
     text-transform:uppercase;
-    background-color: rgba(40, 57, 101, 0);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.loginhtml{    
+    
+    max-width: 96%;
 }
 
 .loginform{
@@ -81,7 +104,7 @@ body{
 	border:none;
 	padding:15px 20px;
 	border-radius:25px;
-	background:rgba(255,255,255,.1);
+	background:rgba(211, 211, 211, 0.082);
 }
 
 .loginform .group input[data-type="password"]{
@@ -90,7 +113,7 @@ body{
 }
 
 .loginform .group .label{
-	color:#aaa;
+	color:rgba(212, 212, 212, 0.856);
 	font-size:12px;
 }
 
@@ -109,23 +132,26 @@ a:hover {
     color:#d1d2d8a8;
 }
 
-
+.middle-block{
+    margin-bottom: 5vh;
+}
 
 
 /* CSS */
 .button-27 {
   appearance: none;
-  background-color: rgba(10, 15, 29, 0.486);
+  background-color: rgba(255, 255, 255, 0.966);
   border: 2px solid  rgba(10, 15, 29, 0.486);
   border-radius: 15px;
   box-sizing: border-box;
-  color: #cfcfcf;
+  color: #0a0a0a;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
   margin: 0;
+  margin-bottom: 2vh;
   min-height: 60px;
   min-width: 0;
   outline: none;
@@ -145,11 +171,22 @@ a:hover {
 }
 
 .button-27:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  box-shadow: rgba(20, 20, 20, 0.863) 0 8px 15px;
   transform: translateY(-2px);
 }
 
 .button-27:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+
+@media (max-width: 930px) {
+   
+.loginhtml{    
+    
+max-width: 96%;
+ 
+}
+
 }
