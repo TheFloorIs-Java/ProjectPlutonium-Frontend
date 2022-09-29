@@ -13,7 +13,14 @@ import { CookieService } from 'ngx-cookie-service';
 export class ProfilePageComponent implements OnInit {
 
   id : String = "";
-  user : user = {}as user;
+  user : user = {
+    id : 1,
+    username : "jacob",
+    profile_pic_url : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg/640px-Lewis_Hamilton_2016_Malaysia_2.jpg",
+    password : "pass",
+    permissionLevel : 1,
+    salt : "salt"
+  };
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private cookieService : CookieService, private router: Router) { 
     this.route.queryParams.subscribe(data => {
@@ -24,20 +31,23 @@ export class ProfilePageComponent implements OnInit {
 
   ngOnInit() {
 
+
+    //Commented out the redirect for non-logged in users...Need to make a user object above to send into the components
     if (this.id == null) {
-           
+     /*      
       this.http.get<user>("https://projectplutonium.azurewebsites.net/users/session",
         {
           headers: { session: this.cookieService.get("session") },
           responseType: 'json'
         }
       ).subscribe(data => {this.user = data}, error => { this.router.navigate(['/login']) });
-
+        */
     } else {
       //check to see if user is logged in
+      /*
       this.http.get<user>("https://projectplutonium.azurewebsites.net/users/id/" + this.id)
       .subscribe(data => {this.user = data});
-
+      */
     }
 
   }
