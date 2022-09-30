@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { session } from 'app/Model/session';
 
 @Component({
   selector: 'app-login-form-component',
@@ -32,16 +33,13 @@ export class LoginFormComponentComponent implements OnInit {
     }
     else {
 
-      this.http.post("https://projectplutonium.azurewebsites.net/login", 
+      this.http.post<session>("https://projectplutonium.azurewebsites.net/login", 
         {
-          username: this.usernameInput,
-          password: this.passwordInput,
-        },
-        {
-          responseType: 'text'
+          "username": this.usernameInput,
+          "password": this.passwordInput,
         }
       ).subscribe(data=> {
-        this.cookieService.set("session", data);
+        this.cookieService.set("session", data.session_id);
         this.router.navigate(['/home']);
       });
 

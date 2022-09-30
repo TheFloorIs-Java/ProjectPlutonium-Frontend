@@ -34,20 +34,20 @@ export class ProfilePageComponent implements OnInit {
 
     //Commented out the redirect for non-logged in users...Need to make a user object above to send into the components
     if (this.id == null) {
-     /*      
+     
       this.http.get<user>("https://projectplutonium.azurewebsites.net/users/session",
         {
           headers: { session: this.cookieService.get("session") },
           responseType: 'json'
         }
       ).subscribe(data => {this.user = data}, error => { this.router.navigate(['/login']) });
-        */
+
     } else {
       //check to see if user is logged in
-      /*
+
       this.http.get<user>("https://projectplutonium.azurewebsites.net/users/id/" + this.id)
       .subscribe(data => {this.user = data});
-      */
+
     }
 
   }
