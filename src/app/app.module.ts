@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { EventEmitter, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -25,6 +25,8 @@ import { DatePipe } from '@angular/common';
 import { LeaderBoardComponent } from './pages/leader-board/leader-board.component';
 import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { AdventureBuilderComponent } from './component/adventure-builder/adventure-builder.component';
+import { UserService } from './service/user.service';
+
 
 
 
@@ -50,10 +52,7 @@ import { AdventureBuilderComponent } from './component/adventure-builder/adventu
     ProfileStatsComponent,
     LeaderBoardComponent,
     CreatePageComponent,
-    AdventureBuilderComponent,
-
-  
-   
+    AdventureBuilderComponent
 
   ],
   imports: [
@@ -63,6 +62,7 @@ import { AdventureBuilderComponent } from './component/adventure-builder/adventu
     FormsModule
   ],
   providers: [
+    UserService,
     CookieService,
     DatePipe
   ],

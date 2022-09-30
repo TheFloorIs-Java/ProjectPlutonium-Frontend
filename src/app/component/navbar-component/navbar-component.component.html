@@ -22,9 +22,9 @@
 
     <a routerLink="/leaderboard" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Leaderboard</a>
     <a routerLink="/admin" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Admin</a>
-    <a routerLink="/login" [ngClass]=" loginstatus === true ? ' w3-hide w3-bar-item w3-button w3-padding-large w3-hide-small' : 'w3-bar-item w3-button w3-padding-large w3-hide-small '">Sign In</a>
+    <a routerLink="/login" [ngClass]=" this.userService.User !== undefined ? ' w3-hide w3-bar-item w3-button w3-padding-large w3-hide-small' : 'w3-bar-item w3-button w3-padding-large w3-hide-small '">Sign In</a>
     <div class="w3-dropdown-hover w3-hide-small">
-      <button [ngClass]=" loginstatus === true ? 'w3-padding-large w3-button ' : 'w3-padding-large w3-button w3-hide'" title="More">My Profile <i class="fa fa-caret-down"></i></button>     
+      <button [ngClass]=" this.userService.User !== undefined ? 'w3-padding-large w3-button ' : 'w3-padding-large w3-button w3-hide'" title="More">My Profile <i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a routerLink = "/profile" class="w3-bar-item w3-button">Profile</a>
         <a href="#" class="w3-bar-item w3-button">Extras</a>

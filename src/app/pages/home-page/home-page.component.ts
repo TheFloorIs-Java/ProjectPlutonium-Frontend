@@ -1,12 +1,13 @@
 import { Component, OnInit, } from '@angular/core';
-import {ZombieGameComponent} from '../../component/zombie-game/zombie-game.component';
 import { HttpClient } from '@angular/common/http';
 import {user} from '../../Model/user';
 import { CookieService } from 'ngx-cookie-service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { publishedGame } from 'app/Model/publishedGame';
-import { DatePipe, JsonPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { scene } from 'app/Model/scene';
+import { UserService } from 'app/service/user.service';
+
 
 @Component({
   selector: 'app-home-page',
@@ -19,7 +20,15 @@ export class HomePageComponent implements OnInit {
   
   newDate = new Date();
   currentDate : string | null = "";
-  constructor(private http :HttpClient, private cookieService : CookieService, private router: Router, private route: ActivatedRoute, private datePipe: DatePipe) { 
+  constructor(
+    private userService : UserService,
+    private http :HttpClient, 
+    private cookieService : CookieService, 
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private datePipe: DatePipe,
+  
+    ) { 
     
     this.currentDate = this.datePipe.transform(this.newDate, 'yyyy-MM-dd');
 
@@ -34,9 +43,14 @@ export class HomePageComponent implements OnInit {
  
 
   ngOnInit(): void {
+    this.userService.onLoginCheckSession();
     this.getUserBySession();
     this.getGameById();
+    
   }
+
+
+  
 
   
   sessionId : String = "";
