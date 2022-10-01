@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import { user } from 'app/Model/user';
 @Component({
   selector: 'app-leader-board',
   templateUrl: './leader-board.component.html',
@@ -7,8 +8,8 @@ import {HttpClient} from '@angular/common/http'
 })
 export class LeaderBoardComponent implements OnInit {
 
-  leaderBoardURL: string = "https://projectplutonium.azurewebsites.net/highScoreCards/all";
-  users: any;
+  leaderBoardURL: string = "https://projectplutonium.azurewebsites.net/users/all";
+  users: Array<user> = [];
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -16,7 +17,7 @@ export class LeaderBoardComponent implements OnInit {
   }
 
   getHSInfo(leaderBoardURL: string){
-    this.http.get<any>(leaderBoardURL,
+    this.http.get<Array<user>>(leaderBoardURL,
       {
         responseType : 'json'
       })

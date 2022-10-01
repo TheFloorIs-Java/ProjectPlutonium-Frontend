@@ -4,14 +4,14 @@
         <thead>
             <tr>
                 <td style=" color: green;">Username</td>
-                <td style=" color: green;">Score</td>
+                <td style=" color: green;">Id</td>
             </tr>
         </thead>
         <tbody style=" color: green;">
             <hr>
             <tr *ngFor="let user of users">
-                <td>{{user.user.username}}</td>
-                <td>{{user.score}}</td>
+                <td><a [routerLink]="['/profile']" [queryParams]="{id:user.user_id}">{{user.username}}</a></td>
+                <td>{{user.user_id}}</td>
             </tr>
         </tbody>
     </table>
