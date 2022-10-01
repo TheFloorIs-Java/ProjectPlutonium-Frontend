@@ -4,6 +4,7 @@ import { UserService } from 'app/service/user.service';
 import { publishedGame } from 'app/Model/publishedGame';
 import { user } from 'app/Model/user';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adventure-builder',
@@ -12,11 +13,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AdventureBuilderComponent implements OnInit {
 
-  constructor(public userService :  UserService, private httpClient : HttpClient) { }
+  constructor(public userService :  UserService, private httpClient : HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     if (this.userService.User != undefined)
       this.username = this.userService.User.username;
+    else
+      this.router.navigate(['/login'])
   }
 
   data : Array<scene> = [
