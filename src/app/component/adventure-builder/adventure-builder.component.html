@@ -1,5 +1,59 @@
 <div class="window">
-    <div class="scene-list"><p>test</p></div>
-    <div class="scene-editor"></div>
-    <div class="action-editor"><p>test</p></div>
+
+    <div class="scene-list">
+        <div class="side-window" >
+            <div *ngFor="let page of data; index as i">
+                <button (click)="changePage(i)" [ngStyle]="{ 'background-color': index == i ? 'lightskyblue' : 'lightgray'}">Page {{i}}</button>
+            </div>
+        </div>
+        <div class="scene-add-remove-buttons">
+            <button (click)="addPage()">add</button>
+            <button (click)="removePage()">remove</button>
+        </div>
+    </div>
+
+    <div class="scene-editor">
+        <div class="title">
+            <span>Game Title:</span><input type="text">
+        </div>
+        <div class="discription-editor">
+            <textarea [(ngModel)]="data[index].description" id="" cols="30" rows="4"></textarea>
+        </div>
+        <div class="bottom-section">
+            <div class="picture-area">
+                <div class="image-wraper">
+                    <img src={{data[index].map}} alt="nopic">
+                </div>
+                <div class="image-input">
+                    <span>url:</span>
+                    <input type="text" [(ngModel)]="data[index].map">
+                </div>
+            </div>
+            <div class="button-area">
+                <div *ngFor="let action of data[index].actions; index as i">
+                    <button (click)="changeAction(i)" [ngStyle]="{ 'background-color': actionIndex == i ? 'lightskyblue' : 'lightgray'}">{{action.actionLabel}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-editor">
+        <div class="side-window action-menu">
+            <div *ngIf="data[index].actions.length > 0">
+                <p>Label: </p>
+                <input type="text" [(ngModel)]="data[index].actions[actionIndex].actionLabel">
+                <p>Next Page Index: </p>
+                <input type="text" [(ngModel)]="data[index].actions[actionIndex].index">
+                <p>Kill Count: </p>
+                <input type="text" [(ngModel)]="data[index].actions[actionIndex].killcount">
+            </div>
+        </div>
+        <div class="scene-add-remove-buttons">
+            <button (click)="addAction()">add</button>
+            <button (click)="removeAction()">remove</button>
+        </div>
+    </div>
+
 </div>
+
+<button>test</button>
