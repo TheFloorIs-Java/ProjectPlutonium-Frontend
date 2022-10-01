@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { scene } from "../../Model/scene"
+import { UserService } from 'app/service/user.service';
+import { publishedGame } from 'app/Model/publishedGame';
+import { user } from 'app/Model/user';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-adventure-builder',
   templateUrl: './adventure-builder.component.html',
@@ -7,9 +12,11 @@ import { scene } from "../../Model/scene"
 })
 export class AdventureBuilderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService :  UserService, private httpClient : HttpClient) { }
 
   ngOnInit(): void {
+    if (this.userService.User != undefined)
+      this.username = this.userService.User.username;
   }
 
   data : Array<scene> = [
@@ -21,8 +28,11 @@ export class AdventureBuilderComponent implements OnInit {
 
   ]
 
+  title = "";
+
   index = 0;
   actionIndex = 0;
+  username : String = "";
 
   changePage(pageNumber : number){
     this.index = pageNumber;
@@ -56,4 +66,27 @@ export class AdventureBuilderComponent implements OnInit {
     }
   }
 
+  saveAdventure(){
+    if (this.userService.User == undefined){
+      alert("User not found. Return to login")
+      return;
+    }
+
+    let characters = JSON.stringify(this.data).length;
+    alert("Game data is " + characters + " characters long")
+    console.log(JSON.stringify(this.data));
+    if (characters > 8000){
+      return;
+    }
+    let us = this.userService.User as user;
+    let pg : publishedGame = {
+      game_id: -1,
+      game_title: this.title,
+      game_data: JSON.stringify(this.data),
+      user: us,
+      number_of_plays: 0
+    }
+    
+    this.httpClient.post("https://projectplutonium.azurewebsites.net/publishedGames", pg).subscribe(data => console.log("returned sucessfully."))
+  }
 }

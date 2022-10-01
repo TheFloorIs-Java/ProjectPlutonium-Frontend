@@ -89,8 +89,8 @@ export class HomePageComponent implements OnInit {
     }else {
     this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/id/"+ this.gameId)
     .subscribe(data => {this.publishedGame = data;
-      console.log(this.publishedGame.gameData)
-      this.gameData = JSON.parse(this.publishedGame.gameData);
+      console.log(this.publishedGame.game_data)
+      this.gameData = JSON.parse(this.publishedGame.game_data);
     })
 
    }     
@@ -100,9 +100,9 @@ export class HomePageComponent implements OnInit {
   getGameByDate() {
 
     console.log(this.currentDate);
-      this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/date/"+ this.currentDate)
+      this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/id/10")//+ this.currentDate)
       .subscribe(data => {this.publishedGame = data;
-      this.gameData = JSON.parse(this.publishedGame.gameData);
+      this.gameData = JSON.parse(this.publishedGame.game_data);
 
     })
 

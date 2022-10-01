@@ -1,10 +1,9 @@
 import { user } from "./user";
 
 export interface publishedGame {
-    id : number;
-    title : string;
-    gameType: string;
-    gameData: string;
+    game_id : number;
+    game_title : string;
+    game_data: string;
     user : user;
-    numberOfPlays: number;
+    number_of_plays: number;
 }

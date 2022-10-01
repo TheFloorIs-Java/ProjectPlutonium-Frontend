@@ -14,7 +14,7 @@
 
     <div class="scene-editor">
         <div class="title">
-            <span>Game Title:</span><input type="text">
+            <span>Game Title:</span><input type="text"  [(ngModel)]="title">
         </div>
         <div class="discription-editor">
             <textarea [(ngModel)]="data[index].description" id="" cols="30" rows="4"></textarea>
@@ -56,4 +56,4 @@
 
 </div>
 
-<button>test</button>
+<span style="color:aliceblue">logged in as: {{username}}</span><button (click)="saveAdventure()">Save Game</button>

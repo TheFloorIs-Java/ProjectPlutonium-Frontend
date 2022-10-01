@@ -12,28 +12,25 @@ export class ProfileStatsComponent implements OnInit {
 
   placeholderGamesMade : Array<publishedGame> = [
     {
-      id: 1,
-      title: "Game 1",
-      gameType: "Zombie",
-      gameData:"",
+      game_id: 1,
+      game_title: "Game 1",
+      game_data:"",
       user: {}as user,
-      numberOfPlays : 0
+      number_of_plays : 0
     },
     {
-      id: 1,
-      title: "Game 2",
-      gameType: "Zombie",
-      gameData:"",
+      game_id: 1,
+      game_title: "Game 2",
+      game_data:"",
       user: {}as user,
-      numberOfPlays : 0
+      number_of_plays : 0
     },
     {
-      id: 1,
-      title: "Game 3",
-      gameType: "Zombie",
-      gameData:"",
+      game_id: 1,
+      game_title: "Game 3",
+      game_data:"",
       user: {}as user,
-      numberOfPlays : 0
+      number_of_plays : 0
     }
   ]
 
@@ -60,7 +57,7 @@ export class ProfileStatsComponent implements OnInit {
   getStringGamesCreated(): Array<String> {
     let gamesmade: String[] = [];
     for(let i = 0; i < this.gamesCreated.length; i++) {
-      gamesmade[i] = this.gamesCreated[i].title;
+      gamesmade[i] = this.gamesCreated[i].game_title;
     }
     return gamesmade;
   }

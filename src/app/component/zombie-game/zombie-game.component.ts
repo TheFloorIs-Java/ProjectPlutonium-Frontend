@@ -66,8 +66,8 @@ export class ZombieGameComponent implements OnInit {
     
     {
       'user' : user.username,
-      'publishedGame' : publishedGame.id,
-      'date' : publishedGame.id,
+      'publishedGame' : publishedGame.game_id,
+      'date' : publishedGame.game_id,
       'score' : killcount,
 
 

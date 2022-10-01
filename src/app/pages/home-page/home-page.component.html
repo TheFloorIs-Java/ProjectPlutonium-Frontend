@@ -10,7 +10,7 @@
   <div class="row">
     
     <div class="column middle" style="background-color: rgba(48, 36, 36, 0.822);">
-      <p clas="gamelabel"> Zombie Surival </p>
+      <p class="gamelabel" style="color:white; font-size:large; font-weight: bold;">{{publishedGame.game_title}} </p>
     <!--<app-hangman-game-component></app-hangman-game-component>-->
     <div *ngIf="gameData.length > 0">
       <app-zombie-game [data]="gameData" [user]="user" [publishedGame]="publishedGame"></app-zombie-game>
