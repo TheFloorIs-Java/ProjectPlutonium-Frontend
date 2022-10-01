@@ -43,10 +43,17 @@ export class HomePageComponent implements OnInit {
  
 
   ngOnInit(): void {
-    this.userService.onLoginCheckSession();
-    this.getUserBySession();
-    this.getGameById();
-    
+
+    if (this.userService.User == undefined) {
+      this.userService.fetchUserBySession().subscribe(data => {
+        this.userService.User = data
+        this.getGameById();
+      }, 
+      error => { this.router.navigate(['/login']) });
+    }
+    else {
+      this.getGameById();
+    }
   }
 
 
@@ -62,19 +69,6 @@ export class HomePageComponent implements OnInit {
   gameData : Array<scene> = [];
 
 
-  
-  
-
-
-  getUserBySession() {
-    
-      this.http.get<user>("https://projectplutonium.azurewebsites.net/users/session",
-        {
-          headers: { session: this.cookieService.get("session") },
-          responseType: 'json'
-        }
-      ).subscribe(data => {this.user = data}, error => { this.router.navigate(['/login']) });
-    }
 
 
   

@@ -3,7 +3,7 @@
 
 export interface user {
 
-    id : number;
+    user_id : number;
     username : String;
     profile_pic_url : String;
     password : String;

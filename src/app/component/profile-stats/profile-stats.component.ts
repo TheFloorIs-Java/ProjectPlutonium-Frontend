@@ -48,7 +48,7 @@ export class ProfileStatsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.http.get<Array<publishedGame>>("https://projectplutonium.azurewebsites.net/publishedGames/userId/{id}" + this.user.id)
+    this.http.get<Array<publishedGame>>("https://projectplutonium.azurewebsites.net/publishedGames/userId/" + this.user.user_id)
       .subscribe(data => {this.gamesCreated = data});
 
       this.stringGamesCreated = this.getStringGamesCreated();

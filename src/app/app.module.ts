@@ -26,6 +26,7 @@ import { LeaderBoardComponent } from './pages/leader-board/leader-board.componen
 import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { AdventureBuilderComponent } from './component/adventure-builder/adventure-builder.component';
 import { UserService } from './service/user.service';
+import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
 
 
 
@@ -52,7 +53,8 @@ import { UserService } from './service/user.service';
     ProfileStatsComponent,
     LeaderBoardComponent,
     CreatePageComponent,
-    AdventureBuilderComponent
+    AdventureBuilderComponent,
+    ProfileGamesCreatedComponent
 
   ],
   imports: [

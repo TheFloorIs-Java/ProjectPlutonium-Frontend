@@ -1,0 +1,14 @@
+.games-created-container {
+    width: 100%;
+    border-style: solid;
+}
+
+.game-created-card-container {
+    border-style: solid;
+    width: 100%;
+    border-color: red;
+    height: 6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

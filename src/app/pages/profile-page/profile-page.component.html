@@ -1,7 +1,8 @@
 <html>
-    <div class="container">
+    <div class="container" *ngIf="user != undefined">
         <app-profile-info [user] = "user"></app-profile-info>
         <app-profile-stats [user] = "user"></app-profile-stats>
+        <app-profile-games-created [user]="user"></app-profile-games-created>
     </div>
 
 </html>

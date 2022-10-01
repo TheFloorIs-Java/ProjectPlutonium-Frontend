@@ -10,8 +10,9 @@
       <div class="column side" style="background-color:rgb(252, 252, 252);"> </div>
       <div class="column middle" style="background-color: rgba(51, 37, 37, 0.822);">
         <p clas="gamelabel"> Zombie Surival </p>
-        <app-adventure-builder></app-adventure-builder>
-
+        <div *ngIf="this.userService.User != undefined">
+          <app-adventure-builder></app-adventure-builder>
+        </div>
 
 
       </div>

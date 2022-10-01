@@ -5,42 +5,56 @@
             <p>Log In</p>
         </div>
 
-            <div class="loginform">
+        <div class="loginform">
             <div class="card-html">
                 <div class="middle-block">
-                
-            <!--GROUP FOR USER FIELD-->
-            <div class="group">
-                <label for="user" class="label">username</label>
 
-                <input  [(ngModel)]="usernameInput" id="user" type="text" class="input" >
+                    <!--GROUP FOR USER FIELD-->
+                    <div class="group">
+                        <label for="user" class="label">username</label>
 
-            </div>
-            <!--GROUP FOR PASSWORD FIELD-->
-            <div class="group">
-                <label for="pass" class="label" >password</label>
+                        <input [(ngModel)]="usernameInput" id="user" type="text" class="input">
 
-                <input [(ngModel)]="passwordInput" id="pass" type="password" class="input" data-type="password">
-            </div>
+                    </div>
+                    <!--GROUP FOR PASSWORD FIELD-->
+                    <div class="group">
+                        <label for="pass" class="label">password</label>
+
+                        <input [(ngModel)]="passwordInput" id="pass" type="password" class="input" data-type="password">
+                    </div>
+
+                    <!--GROUP FOR CONFIRM FIELD-->
+                    <div class="group" *ngIf="registering == true">
+                        <label for="conf" class="label">confirm</label>
+
+                        <input [(ngModel)]="confirmInput" id="pass" type="password" class="input" data-type="password">
+                    </div>
                 </div>
-            
-            <!--LOG IN BUTTON-->
-            <div class="group">
-                <button (click)="loginButtonPressed()" class="button-27" role="button" >Log In</button>
+
+                <!--LOG IN BUTTON-->
+                <div class="group" *ngIf="registering != true">
+                    <button (click)="loginButtonPressed()" class="button-27" role="button">Log In</button>
+                </div>
+
+                <!--REGISTER BUTTON-->
+                <div class="group" *ngIf="registering == true">
+                    <button (click)="registerButtonPressed()" class="button-27" role="button">Register</button>
+                </div>
+
+                <div class="hr"></div>
+
+                <div class="foot-lnk">
+                    <a routerLink="/login" (click)="registering = !registering">{{registering ? "return to login" : "register account"}}</a>
+                    <p class="errorMessage" style="color: rgba(230, 70, 70, 0.938)">{{errorMessage}}</p>
+                </div>
+
             </div>
 
-            <div class="hr"></div>
-
-            <div class="foot-lnk">
-                <p class="errorMessage" style="color: rgba(230, 70, 70, 0.938)">{{errorMessage}}</p>
-            </div>
-            
-        </div>
-        
         </div>
         <div class="footer">
 
         </div>
-    
+
     </div>
+
 </div>
