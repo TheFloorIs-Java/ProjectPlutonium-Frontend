@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChange } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { UserService } from 'app/service/user.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar-component',
@@ -8,11 +11,21 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class NavbarComponentComponent implements OnInit {
 
-  constructor(private cookieService : CookieService) { }
+  constructor(
+    private cookieService : CookieService,
+    public userService : UserService,
+    private router: Router
+    ) { }
+
 
   ngOnInit(): void {
     this.checkLogin();
+    
   }
+
+ 
+
+  
 
 
   clicked : boolean = false;
@@ -26,21 +39,28 @@ export class NavbarComponentComponent implements OnInit {
     
   }
 
- session = this.cookieService.get("session");
+ 
  
 logOut() {
     
-   if(this.session !== ""){
+  this.userService.User = undefined;
+  let session = this.cookieService.get("session");
+
+   if(session !== ""){
       sessionStorage.clear();
       localStorage.clear();
       this.cookieService.deleteAll();
       
    }
 
+   this.router.navigate(['/login']);
+
+
   }
 
   checkLogin(){
-    if(this.session !== ""){
+    let session = this.cookieService.get("session");
+    if(session !== ""){
       this.loginstatus = true;
     }else {
       this.loginstatus = false;

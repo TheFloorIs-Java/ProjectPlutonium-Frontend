@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { session } from 'app/Model/session';
+import { UserService } from 'app/service/user.service';
+
 
 @Component({
   selector: 'app-login-form-component',
@@ -11,7 +13,12 @@ import { session } from 'app/Model/session';
 })
 export class LoginFormComponentComponent implements OnInit {
 
-  constructor(private http :HttpClient, private cookieService : CookieService,private router: Router) { }
+  constructor(
+    private userService :  UserService,
+    private http :HttpClient,
+    private cookieService : CookieService,
+    private router: Router
+     ) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +27,9 @@ export class LoginFormComponentComponent implements OnInit {
   usernameInput:any = "";
   passwordInput:any = "";
   errorMessage: string = "";
+
+
+  
 
 
   
@@ -40,7 +50,11 @@ export class LoginFormComponentComponent implements OnInit {
         }
       ).subscribe(data=> {
         this.cookieService.set("session", data.session_id);
+        this.userService.User = data.user;
         this.router.navigate(['/home']);
+      
+        
+        
       });
 
 
