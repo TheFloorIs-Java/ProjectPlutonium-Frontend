@@ -28,7 +28,10 @@ import { AdventureBuilderComponent } from './component/adventure-builder/adventu
 import { UserService } from './service/user.service';
 import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
 import { GamePageComponent } from './pages/game-page/game-page.component';
-
+//import { HttpClientModule, HttpClient, HttpResponse } from '@angular/common/http'; 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpTestingController } from '@angular/common/http/testing';
+//import { LoginFormComponentComponent } from './component/login-form-component/login-form-component.component';
 
 
 
@@ -64,6 +67,7 @@ import { GamePageComponent } from './pages/game-page/game-page.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule
+    
   ],
   providers: [
     UserService,
