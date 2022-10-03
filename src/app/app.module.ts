@@ -31,6 +31,7 @@ import { GamePageComponent } from './pages/game-page/game-page.component';
 //import { HttpClientModule, HttpClient, HttpResponse } from '@angular/common/http'; 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpTestingController } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 //import { LoginFormComponentComponent } from './component/login-form-component/login-form-component.component';
 
 
@@ -66,7 +67,8 @@ import { HttpTestingController } from '@angular/common/http/testing';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    HttpClientTestingModule
+    HttpClientTestingModule,
+    RouterTestingModule
   ],
   providers: [
     UserService,
