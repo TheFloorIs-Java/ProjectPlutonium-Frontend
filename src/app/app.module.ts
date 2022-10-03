@@ -73,7 +73,7 @@ import { HttpTestingController } from '@angular/common/http/testing';
     CookieService,
     DatePipe,
     HttpClient,
-    HttpClientModule,,
+    HttpClientModule,
     HttpResponse
   ],
   bootstrap: [AppComponent]
