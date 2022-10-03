@@ -1,0 +1,11 @@
+
+<body>
+
+    <div class="gamewrapper">
+        
+        <div *ngIf="gameData.length > 0">
+            <app-zombie-game [data]="gameData" [user]="user" [publishedGame]="publishedGame"></app-zombie-game>
+        </div>
+    </div>
+
+</body>

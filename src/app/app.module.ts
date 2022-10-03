@@ -27,6 +27,7 @@ import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { AdventureBuilderComponent } from './component/adventure-builder/adventure-builder.component';
 import { UserService } from './service/user.service';
 import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
+import { GamePageComponent } from './pages/game-page/game-page.component';
 
 
 
@@ -54,7 +55,8 @@ import { ProfileGamesCreatedComponent } from './component/profile-games-created/
     LeaderBoardComponent,
     CreatePageComponent,
     AdventureBuilderComponent,
-    ProfileGamesCreatedComponent
+    ProfileGamesCreatedComponent,
+    GamePageComponent
 
   ],
   imports: [

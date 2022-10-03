@@ -6,12 +6,13 @@ import { LeaderBoardComponent } from './pages/leader-board/leader-board.componen
 import { LoginPageComponentComponent } from './pages/login-page-component/login-page-component.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { CreatePageComponent } from './pages/create-page/create-page.component';
-//import { RulesComponent } from './pages/rules/rules.component';
+import { GamePageComponent } from './pages/game-page/game-page.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'login', component: LoginPageComponentComponent},
-  //{path: 'rules', component: RulesComponent},
+  {path: 'game', component: GamePageComponent},
   {path: 'home', component: HomePageComponent},
   {path: 'admin', component: AdminPageComponentComponent},
   {path: 'profile', component: ProfilePageComponent},
