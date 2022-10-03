@@ -1,6 +1,6 @@
 import { EventEmitter, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +36,6 @@ import { HttpTestingController } from '@angular/common/http/testing';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,13 +65,16 @@ import { HttpTestingController } from '@angular/common/http/testing';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-    
+    FormsModule,
+    HttpClientTestingModule
   ],
   providers: [
     UserService,
     CookieService,
-    DatePipe
+    DatePipe,
+    HttpClient,
+    HttpClientModule,,
+    HttpResponse
   ],
   bootstrap: [AppComponent]
 })
