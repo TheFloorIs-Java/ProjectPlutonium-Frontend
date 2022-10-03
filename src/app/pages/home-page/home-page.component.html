@@ -1,15 +1,33 @@
 
+
 <body>
 
     
-  <div class="header">
-    <h2>Game Info</h2>
-    <p class="subheader">Welcome! Check out today's challenge below!</p>
+  <div class="header b2">
+
+    <div class="svg">
+      <object data="../../../assets/images/writeb.svg" width="80" height="100"> </object>
+    </div>
+
+    <div class="left tracking-in-expand">
+    
+
+    <h2> Project Plutonium</h2>
+    <p class="subheader">A web application for gamers and writers alike.</p>
+    </div>
+    <div class="right">
+
+      <div class="image">
+        <img src="../../../assets/images/a-horizontal.jpg" alt="image of an abandoned building">
+      </div>
+
+    </div>
+
   </div>
   
   <div class="row">
     
-    <div class="column middle" style="background-color: rgba(48, 36, 36, 0.822);">
+    <div class="column middle" style="background-color: rgba(119, 119, 119, 0.822);">
       <p class="gamelabel" style="color:white; font-size:large; font-weight: bold;">{{publishedGame.game_title}} </p>
     <!--<app-hangman-game-component></app-hangman-game-component>-->
     <div *ngIf="gameData.length > 0">
@@ -22,6 +40,8 @@
   
   <div class="footer">
     <p>Footer</p>
+    <p> Icon by <a href="https://freeicons.io/profile/205927">Flatart</a> on <a href="https://freeicons.io">freeicons.io</a>
+    </p>
   </div>
   
   </body>
