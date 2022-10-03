@@ -75,7 +75,7 @@ import { RouterTestingModule } from '@angular/router/testing';
     CookieService,
     DatePipe,
     HttpClient,
-    HttpClientModule,,
+    HttpClientModule,
     HttpResponse
   ],
   bootstrap: [AppComponent]
