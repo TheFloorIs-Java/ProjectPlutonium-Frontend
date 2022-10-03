@@ -14,7 +14,8 @@ import { UserService } from 'app/service/user.service';
 export class ProfilePageComponent implements OnInit {
 
   id : String = "";
-  user : user | undefined = undefined; 
+  user : user | undefined = undefined;
+  viewingOwnProfile : boolean = false; 
   
   // {
   //   id : 1,
@@ -51,6 +52,7 @@ export class ProfilePageComponent implements OnInit {
 
   loadUser() {
     if (this.id == null) {
+      this.viewingOwnProfile = true;
       if (this.userService.User != undefined){
         console.log(this.userService.User.user_id + " " + this.userService.User.username)
         this.user = this.userService.User;
@@ -61,5 +63,7 @@ export class ProfilePageComponent implements OnInit {
       .subscribe(data => {this.user = data});
     }
   }
+
+
 
 }
