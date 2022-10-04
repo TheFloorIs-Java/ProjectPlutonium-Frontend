@@ -27,7 +27,7 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import { HttpClient } from '@angular/common/http';
 import { ViewAllUsersComponentComponent } from './view-all-users-component.component';
 import { RouterTestingModule } from "@angular/router/testing";
-describe('ViewAllUsersComponentComponent', () => {
+//describe('ViewAllUsersComponentComponent', () => {
   let component: ViewAllUsersComponentComponent;
   let fixture: ComponentFixture<ViewAllUsersComponentComponent>;
 
@@ -39,6 +39,6 @@ describe('ViewAllUsersComponentComponent', () => {
     component = fixture.componentInstance;
 ;
   });
-  it('works', () => {
-  });
-});
+  //it('works', () => {
+  //});
+//});

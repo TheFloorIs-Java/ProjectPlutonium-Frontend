@@ -30,7 +30,7 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import { HttpClientModule, HttpClient } from '@angular/common/http'; 
 import { GamePageComponent } from './game-page.component';
 import { RouterTestingModule } from "@angular/router/testing";
-describe('GamePageComponent', () => {
+//describe('GamePageComponent', () => {
   let component: GamePageComponent;
   let fixture: ComponentFixture<GamePageComponent>;
 
@@ -41,8 +41,8 @@ describe('GamePageComponent', () => {
     });
     //fixture = TestBed.createComponent(GamePageComponent);
     //component = fixture.componentInstance;
-
+    it('works', () => {
+    });
   });
-  it('works', () => {
-  });
-});
+ 
+//});

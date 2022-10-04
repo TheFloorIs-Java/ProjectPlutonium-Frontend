@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
 import { AdminPageComponentComponent } from './admin-page-component.component';
-describe('AdminPageComponentComponent', () => {
+//describe('AdminPageComponentComponent', () => {
   let component: AdminPageComponentComponent;
   let fixture: ComponentFixture<AdminPageComponentComponent>;
 
@@ -14,9 +14,9 @@ describe('AdminPageComponentComponent', () => {
     component = fixture.componentInstance;
 ;
   });
-  it('works', () => {
-  });
-});
+  //it('works', () => {
+  //});
+//});
 
 
 
