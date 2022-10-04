@@ -1,7 +1,7 @@
 <div class="games-created-container">
     <div class="game-created-card" *ngFor="let game of games_list">
         <div class="game-created-card-container">
-            <a [routerLink]="['/Home']" [queryParams]="{id:game.game_id}">{{game.game_title}}</a>
+            <a [routerLink]="['/game']" [queryParams]="{id:game.game_id}">{{game.game_title}}</a>
             <p>Number of Plays: {{game.number_of_plays}}</p>
         </div>
     </div>

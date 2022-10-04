@@ -10,12 +10,18 @@ export class ProfileInfoComponent implements OnInit {
 
   @Input()
   user : user = {}as user;
-  url : String = this.getProfilePicture();
-  bio : String = this.getBio();
+  @Input()
+  viewingOwnProfile : boolean = false;
+  pro_pic_url : String = this.getProfilePicture();
 
   constructor() { }
 
   ngOnInit(): void {
+
+    //checks to see if the current user has a profile picture
+    if (this.user.profile_pic_url != null) {
+      this.pro_pic_url = this.user.profile_pic_url;
+    }
   }
 
   getUsername() : String {
@@ -26,7 +32,4 @@ export class ProfileInfoComponent implements OnInit {
     return "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
   }
 
-  getBio() : String {
-    return "Placeholder Bio";
-  }
 }

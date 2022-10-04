@@ -7,7 +7,7 @@ export interface user {
     username : String;
     profile_pic_url : String;
     password : String;
-    permissionLevel : number;
+    permission_level : number;
     salt : String;
 
 }

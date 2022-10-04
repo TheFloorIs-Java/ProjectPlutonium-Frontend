@@ -1,32 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 import { AdminPageComponentComponent } from './admin-page-component.component';
-import  { async } from "@angular/core/testing";
-
 describe('AdminPageComponentComponent', () => {
   let component: AdminPageComponentComponent;
   let fixture: ComponentFixture<AdminPageComponentComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AdminPageComponentComponent ]
-    })
-    .compileComponents();
-
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ]
+    });
     fixture = TestBed.createComponent(AdminPageComponentComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-
-    it('should create', () => {
-      expect(component).toBeTruthy();
-    });
-  
-  it('should create', ()=> {
-    expect (component).toBeTruthy();
+;
   });
-  
+  it('works', () => {
   });
-
-
-
 });
+
+
+
+

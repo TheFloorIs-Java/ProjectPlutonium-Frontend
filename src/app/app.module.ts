@@ -1,6 +1,6 @@
 import { EventEmitter, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,8 +28,11 @@ import { AdventureBuilderComponent } from './component/adventure-builder/adventu
 import { UserService } from './service/user.service';
 import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
 import { GamePageComponent } from './pages/game-page/game-page.component';
-
-
+//import { HttpClientModule, HttpClient, HttpResponse } from '@angular/common/http'; 
+//import { HttpClientTestingModule } from '@angular/common/http/testing';
+//import { HttpTestingController } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+//import { LoginFormComponentComponent } from './component/login-form-component/login-form-component.component';
 
 
 
@@ -64,12 +67,17 @@ import { GamePageComponent } from './pages/game-page/game-page.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    //HttpClientTestingModule,
+    RouterTestingModule
   ],
   providers: [
     UserService,
     CookieService,
-    DatePipe
+    DatePipe,
+    HttpClient,
+    HttpClientModule,
+    HttpResponse
   ],
   bootstrap: [AppComponent]
 })

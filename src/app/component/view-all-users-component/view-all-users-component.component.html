@@ -1,1 +1,21 @@
 <p>view-all-users-component works!</p>
+<div class="admin-users-container">
+    <div class="users-list">
+        <div *ngFor="let user of usersList; index as i">
+            <button class="list-button" (click)="changeUserIndex(i)">{{user.username}}</button>
+        </div>
+    </div>
+    <div *ngIf="usersList.length > 0 && !loading" class="user-properties">
+        <p>Id: {{usersList[userIndex].user_id}}</p>
+        <span>Username:</span><input type="text" [(ngModel)]="usersList[userIndex].username">
+        <br>
+        <span>Profile Pic:</span><input type="text" [(ngModel)]="usersList[userIndex].profile_pic_url">
+        <br>
+        <span>Permission Level:</span><input type="text" [(ngModel)]="usersList[userIndex].permission_level">
+
+        <div class="user-buttons">
+            <button (click)="saveUser()">save</button>
+            <button (click)="deleteUser()">delete</button>
+        </div>
+    </div>
+</div>
