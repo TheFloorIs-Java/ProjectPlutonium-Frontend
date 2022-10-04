@@ -36,10 +36,7 @@ export class ProfileStatsComponent implements OnInit {
 
   @Input()
   user : user = {}as user;
-  gamesCreated : Array<publishedGame> = [];
-  stringGamesCreated : Array<String> = [];
-  pg : publishedGame = {}as publishedGame;
-
+  
   score : number = 0;
   rank : number = 1;
   avgscore : number = 0;
@@ -47,19 +44,5 @@ export class ProfileStatsComponent implements OnInit {
   constructor(private http :HttpClient) { }
 
   ngOnInit(): void {
-
-    this.http.get<Array<publishedGame>>("https://projectplutonium.azurewebsites.net/publishedGames/userId/" + this.user.user_id)
-      .subscribe(data => {this.gamesCreated = data});
-
-      this.stringGamesCreated = this.getStringGamesCreated();
   }
-
-  getStringGamesCreated(): Array<String> {
-    let gamesmade: String[] = [];
-    for(let i = 0; i < this.gamesCreated.length; i++) {
-      gamesmade[i] = this.gamesCreated[i].game_title;
-    }
-    return gamesmade;
-  }
-
 }

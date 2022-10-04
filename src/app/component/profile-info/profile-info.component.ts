@@ -28,10 +28,7 @@ export class ProfileInfoComponent implements OnInit {
   }
 
   changeProfilePic() {
-    console.log("button is being clicked");
     if (this.newurl != "") {
-      console.log(this.newurl);
-      console.log("enters if statement");
       this.user1 = {
         user_id : this.user.user_id,
         username : "",
@@ -40,9 +37,6 @@ export class ProfileInfoComponent implements OnInit {
         permission_level : 0,
         salt : ""
       }
-
-      console.log(this.user1);
-
       this.httpClient.patch<user>("https://projectplutonium.azurewebsites.net/users/profilepic",this.user1).subscribe(data => this.pro_pic_url = data.profile_pic_url);
     }
   }
