@@ -26,9 +26,13 @@ export class AdventureBuilderComponent implements OnInit {
       {
         description: "text here....",
         map: "../../../assets/images/map.png",
-        actions: []
-      },
-
+        actions: [],
+        score: 0,
+        hpAdjust: 0,
+        deathIndex: 0,
+        addItem: "",
+        removeItem: ""
+      }
   ]
 
   title = "";
@@ -43,7 +47,7 @@ export class AdventureBuilderComponent implements OnInit {
   }
 
   addPage() {
-    this.data.push({description: "", map: "../../../assets/images/map.png", actions:[]})
+    this.data.push({description: "", map: "../../../assets/images/map.png", actions:[], score: 0, hpAdjust: 0, deathIndex:0, addItem: "", removeItem: ""})
   }
 
   removePage() {
@@ -59,7 +63,7 @@ export class AdventureBuilderComponent implements OnInit {
   }
 
   addAction(){
-    this.data[this.index].actions.push({actionLabel: "action", index: 0})
+    this.data[this.index].actions.push({actionLabel: "action", index: 0, chance:100, failIndex: 0, requiredItem: ""})
   }
 
   removeAction(){

@@ -47,20 +47,18 @@ export class ZombieGameComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.changePage(0,0);
+    this.changePage(0);
   }
 
-  changePage(sceneindex:number, killcount:number|undefined) {
+  changePage(sceneindex:number) {
 
     this.description = this.data[sceneindex].description;
     this.map = this.data[sceneindex].map;
     this.actions = this.data[sceneindex].actions;
-    if (killcount != undefined)
-      this.killcount+= killcount;
 
   }
 
-  postScoreOnComplete(user : user, killcount: number, publishedGame : publishedGame) {
+  postScoreOnComplete(user : user, publishedGame : publishedGame) {
 
     this.http.post("https://projectplutonium.azurewebsites.net/scoreCard",
     
@@ -68,7 +66,7 @@ export class ZombieGameComponent implements OnInit {
       'user' : user.username,
       'publishedGame' : publishedGame.game_id,
       'date' : publishedGame.game_id,
-      'score' : killcount,
+      'score' : 0,
 
 
     },{

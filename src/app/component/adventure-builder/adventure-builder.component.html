@@ -39,13 +39,34 @@
 
     <div class="action-editor">
         <div class="side-window action-menu">
+            <b>Page Settings</b>
+            <p>Add Score</p>
+            <input type="text" [(ngModel)]="data[index].score">
+            <p>Change Hp</p>
+            <input type="number" [(ngModel)]="data[index].hpAdjust" >
+            <div *ngIf="data[index].hpAdjust! < 0">
+                <p>"You Died" Page Index</p>
+                <input type="number" [(ngModel)]="data[index].deathIndex">
+            </div>
+            <p>Add Item</p>
+            <input type="text" [(ngModel)]="data[index].addItem">
+            <p>Remove Item</p>
+            <input type="text" [(ngModel)]="data[index].removeItem">
+
+            <b>Action Settings</b>
             <div *ngIf="data[index].actions.length > 0">
                 <p>Label: </p>
                 <input type="text" [(ngModel)]="data[index].actions[actionIndex].actionLabel">
                 <p>Next Page Index: </p>
-                <input type="text" [(ngModel)]="data[index].actions[actionIndex].index">
-                <p>Kill Count: </p>
-                <input type="text" [(ngModel)]="data[index].actions[actionIndex].killcount">
+                <input type="number" [(ngModel)]="data[index].actions[actionIndex].index">
+                <p>Success Chance: </p>
+                <input type="number" [(ngModel)]="data[index].actions[actionIndex].chance">
+                <div *ngIf="data[index].actions[actionIndex].chance! < 100">
+                    <p>Failure Page Index: </p>
+                    <input type="number" [(ngModel)]="data[index].actions[actionIndex].failIndex">
+                </div>
+                <p>Require Item: </p>
+                <input type="text" [(ngModel)]="data[index].actions[actionIndex].requiredItem">
             </div>
         </div>
         <div class="scene-add-remove-buttons">

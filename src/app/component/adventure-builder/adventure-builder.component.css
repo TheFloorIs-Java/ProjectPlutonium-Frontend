@@ -127,3 +127,8 @@
 .action-menu input {
     width: 100%;
 }
+
+.action-editor {
+    font-size: small;
+    overflow: auto;
+}
