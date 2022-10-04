@@ -4,6 +4,8 @@ import { DeleteUserComponentComponent } from 'app/component/delete-user-componen
 import {user} from '../../Model/user';
 import { CookieService } from 'ngx-cookie-service';
 import { identifierName } from '@angular/compiler';
+import { dailychallenge } from 'app/Model/dailychallenge';
+import { publishedGame } from 'app/Model/publishedGame';
 @Component({
   selector: 'app-admin-page-component',
   templateUrl: './admin-page-component.component.html',
@@ -47,6 +49,10 @@ public inputUserName: string="";
 inputUserPassword: string ="";
 inputUserLevel: number =0;
 id: number=0;
+inputGameId = 0;
+challenge_date : Date = new Date;
+
+
   submitUserQ(){
 
 this.http.post<Array <user>>("https://projectplutonium.azurewebsites.net/users", 
@@ -83,21 +89,20 @@ deleteUser(){
 }
 ///////////////
 submitGameofDay(){
-  this.http.put<Array <user>>("https://projectplutonium.azurewebsites.net/publishedGames", 
+  console.log(this.challenge_date.toString());
+  console.log(this.inputGameId);
+  this.http.post<dailychallenge>("http://localhost:8080/dailyChallenge/", 
            {
-              id: this.id,
-              username: this.inputUserName,
-              password: this.inputUserPassword,
-              permissionLevel: this.inputUserLevel
-            },
-            {
+            headers: { challenge_date: this.challenge_date.toString(),
+                       game_id: this.inputGameId},
               responseType: 'json'
             }
-          )//.subscribe(data=> console.log(data));  
+          ).subscribe(data=> console.log(data));  
 }
+
+
   
 }
 /////////////////////
-
 
 

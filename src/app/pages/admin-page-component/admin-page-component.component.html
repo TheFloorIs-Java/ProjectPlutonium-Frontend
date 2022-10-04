@@ -43,10 +43,10 @@ Add User Level:<input type="number" [(ngModel)]="inputUserLevel">
                         </div>
 
                         <hr>
-                        <div style=" color: green;"> Select Game of the Day
+                        <div style=" color: green;"> Post Game of the Day
                             <p >
-                            Date:<input type="text" [(ngModel)]="inputUserName" >
-                            Game ID:<input type="number" [(ngModel)]="inputUserLevel"> 
+                            Date:<input type="date" [(ngModel)]="challenge_date" >
+                            Game ID:<input type="number" [(ngModel)]="inputGameId"> 
                                  <button (click)="submitGameofDay()" style="color: darkblue; background-color: lightcyan;">submit</button> </p> </div>
                    
 </body>
