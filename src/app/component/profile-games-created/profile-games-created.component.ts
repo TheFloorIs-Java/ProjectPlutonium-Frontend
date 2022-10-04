@@ -31,4 +31,9 @@ export class ProfileGamesCreatedComponent implements OnInit {
     .subscribe(data => {this.games_list = data; console.log("end request")});
   }
 
+  //for delete game function later
+  // deleteGame(gameid) {
+
+  // }
+
 }
