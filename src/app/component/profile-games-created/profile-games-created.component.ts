@@ -9,6 +9,9 @@ import { user } from "../../Model/user"
   styleUrls: ['./profile-games-created.component.css']
 })
 export class ProfileGamesCreatedComponent implements OnInit {
+//deleteGame(arg0: number) {
+//throw new Error('Method not implemented.');
+//}
 
   @Input()
   user : user = {} as user;
@@ -32,8 +35,8 @@ export class ProfileGamesCreatedComponent implements OnInit {
   }
 
   //for delete game function later
-  // deleteGame(gameid) {
+   deleteGame(gameid: any) {
 
-  // }
+   }
 
 }
