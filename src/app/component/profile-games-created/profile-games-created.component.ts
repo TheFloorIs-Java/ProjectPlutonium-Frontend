@@ -35,8 +35,8 @@ export class ProfileGamesCreatedComponent implements OnInit {
   }
 
   //for delete game function later
-   //deleteGame(gameid: any) {
+   deleteGame(gameid: any) {
 
-  // }
+   }
 
 }
