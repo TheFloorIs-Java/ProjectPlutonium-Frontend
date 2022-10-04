@@ -12,6 +12,8 @@ export class ProfileGamesCreatedComponent implements OnInit {
 
   @Input()
   user : user = {} as user;
+  @Input() 
+  viewingOwnProfile : boolean = false;
 
   constructor(private httpClient: HttpClient) { }
 

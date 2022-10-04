@@ -3,6 +3,7 @@
         <div class="game-created-card-container">
             <a [routerLink]="['/game']" [queryParams]="{id:game.game_id}">{{game.game_title}}</a>
             <p>Number of Plays: {{game.number_of_plays}}</p>
+            <button *ngIf="viewingOwnProfile">Delete game</button>
         </div>
     </div>
 </div>
