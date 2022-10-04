@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GameInfoComponent } from './game-info.component';
 
-describe('GameInfoComponent', () => {
+//describe('GameInfoComponent', () => {
   let component: GameInfoComponent;
   let fixture: ComponentFixture<GameInfoComponent>;
 
@@ -17,7 +17,7 @@ describe('GameInfoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+ // it('should create', () => {
+ //   expect(component).toBeTruthy();
+ // });
+//});
