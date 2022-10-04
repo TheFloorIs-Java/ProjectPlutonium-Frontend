@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { publishedGame } from 'app/Model/publishedGame';
-import { user } from "../../Model/user"
+import { user } from "../../Model/user";
+import { Router } from '@angular/router';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-profile-games-created',
@@ -18,7 +20,7 @@ export class ProfileGamesCreatedComponent implements OnInit {
   @Input() 
   viewingOwnProfile : boolean = false;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router ) { }
 
   ngOnInit(): void {
     this.getUserGames();
@@ -35,8 +37,8 @@ export class ProfileGamesCreatedComponent implements OnInit {
   }
 
   //for delete game function later
-   deleteGame(gameid: any) {
-
+   deleteGame(gameid: number) {
+    this.httpClient.delete("https://projectplutonium.azurewebsites.net/publishedGames/id/" + gameid).subscribe(data => this.getUserGames());
    }
 
 }
