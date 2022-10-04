@@ -1,4 +1,4 @@
-
+/*
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import { HttpClientModule, HttpClient } from '@angular/common/http'; 
@@ -16,9 +16,8 @@ import { RouterTestingModule } from "@angular/router/testing";
     });
     fixture = TestBed.createComponent(ProfileGamesCreatedComponent);
    component = fixture.componentInstance;
-   //it('works', () => {
- // });
-  });
+  
+ // })
 
-//});
-
+});
+*/

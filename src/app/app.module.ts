@@ -26,7 +26,7 @@ import { LeaderBoardComponent } from './pages/leader-board/leader-board.componen
 import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { AdventureBuilderComponent } from './component/adventure-builder/adventure-builder.component';
 import { UserService } from './service/user.service';
-import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
+//import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
 import { GamePageComponent } from './pages/game-page/game-page.component';
 //import { HttpClientModule, HttpClient, HttpResponse } from '@angular/common/http'; 
 //import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -59,7 +59,7 @@ import { GamePageComponent } from './pages/game-page/game-page.component';
     LeaderBoardComponent,
     CreatePageComponent,
     AdventureBuilderComponent,
-    ProfileGamesCreatedComponent,
+   // ProfileGamesCreatedComponent,
     GamePageComponent
 
   ],
