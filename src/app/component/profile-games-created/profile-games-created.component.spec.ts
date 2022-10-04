@@ -34,11 +34,11 @@ describe('ProfileGamesCreatedComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule, RouterTestingModule ]
+     imports: [ HttpClientTestingModule]
     });
     fixture = TestBed.createComponent(ProfileGamesCreatedComponent);
-    component = fixture.componentInstance;
-;
+   // component = fixture.componentInstance;
+
   });
   it('works', () => {
   });

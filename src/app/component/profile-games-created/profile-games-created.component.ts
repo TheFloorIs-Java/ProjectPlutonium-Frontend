@@ -9,9 +9,14 @@ import { user } from "../../Model/user"
   styleUrls: ['./profile-games-created.component.css']
 })
 export class ProfileGamesCreatedComponent implements OnInit {
+//deleteGame(arg0: number) {
+//throw new Error('Method not implemented.');
+//}
 
   @Input()
   user : user = {} as user;
+  @Input() 
+  viewingOwnProfile : boolean = false;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -28,5 +33,10 @@ export class ProfileGamesCreatedComponent implements OnInit {
     this.httpClient.get<Array<publishedGame>>("https://projectplutonium.azurewebsites.net/publishedGames/userId/"+this.user.user_id)
     .subscribe(data => {this.games_list = data; console.log("end request")});
   }
+
+  //for delete game function later
+   deleteGame(gameid: any) {
+
+   }
 
 }

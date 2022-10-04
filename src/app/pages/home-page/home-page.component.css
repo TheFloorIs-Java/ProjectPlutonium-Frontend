@@ -154,6 +154,29 @@ Text animation
 
   }
 
+  @media screen and (max-width: 1800px) {
+    
+    img {
+    position:cover;
+    max-width: 900px;
+    min-height: 900px;
+    }
+  }
+
+
+  @media screen and (max-width: 600px){
+
+    .header {
+      display: grid;
+    }
+
+    .leftbox {
+      height: 400px;
+    }
+
+
+  }
+
     
   /* 
 

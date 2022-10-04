@@ -33,12 +33,12 @@ describe('GamePageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, HttpClientTestingModule ]
+      imports: [  HttpClientTestingModule ]
     });
     fixture = TestBed.createComponent(GamePageComponent);
     component = fixture.componentInstance;
-;
-  });
-  it('works', () => {
+
+ // });
+ // it('works', () => {
   });
 });
