@@ -1,0 +1,25 @@
+p{
+    margin: 0;
+}
+.games-played-container {
+    border-style: solid;
+    border-color: blue;
+    width: 100%;
+}
+
+.games-played-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-style: dashed;
+    border-color: red;
+    height: 100px;
+
+}
+
+.number-of-plays {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -37,7 +37,7 @@ export class SubmitGameOTDComponent implements OnInit {
     this.http.post<dailychallenge>("http://localhost:8080/dailyChallenge/", 
              {
               headers: { challenge_date: this.challenge_date.toString(),
-                         game_id: this.gameId},
+                         game_id: this.gameId },
                 responseType: 'json'
               }
             ).subscribe(data=> console.log(data));  

@@ -29,10 +29,12 @@ import { UserService } from './service/user.service';
 import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
 import { GamePageComponent } from './pages/game-page/game-page.component';
 import { SubmitGameOTDComponent } from './component/submit-game-otd/submit-game-otd.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { HttpTestingController } from '@angular/common/http/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-
+import { ProfileGamesPlayedComponent } from './component/profile-games-played/profile-games-played.component';
+//import { HttpClientModule, HttpClient, HttpResponse } from '@angular/common/http'; 
+//import { HttpClientTestingModule } from '@angular/common/http/testing';
+//import { HttpTestingController } from '@angular/common/http/testing';
+//import { RouterTestingModule } from '@angular/router/testing';
+//import { LoginFormComponentComponent } from './component/login-form-component/login-form-component.component';
 
 
 
@@ -62,7 +64,8 @@ import { RouterTestingModule } from '@angular/router/testing';
     ProfileGamesCreatedComponent,
     GamePageComponent,
     SubmitGameOTDComponent,
-    GamePageComponent
+    GamePageComponent,
+    ProfileGamesPlayedComponent
 
   ],
   imports: [
