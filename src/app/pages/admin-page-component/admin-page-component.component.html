@@ -1,71 +1,37 @@
 <body>
-    <p style=" color: green;">Admin Page</p>
-    <br>
-    <hr>
-    <p style=" color: green;">Admin function 1:</p>
-    <p></p>
-    <button (click)="clickEvent()" style="color: darkblue; background-color: lightcyan;">
-        empty button</button>
-    <!-- <p *ngIf = "msg">User List:</p> -->
-    <p style=" color: green;">{{msg}}</p>
+    <div class="menu-content">
 
-    <hr>
-    <p style=" color: green;">List of Users:</p>
-    <p></p>
-    <button (click)="getUsers()" style="color: darkblue; background-color: lightcyan;">
-        Users</button>
+        <div class="optionswrapper">
+            <div class="options">
+                <button id="1" [ngClass]=" index == 1?  'button-59' : 'button-59 highlight' "
+                    (click)="loadSection($event)" role="button">Game Of-The-Day</button>
+                <button id="2" [ngClass]=" index == 2 ?  'button-59 ' : 'button-59 highlight' "
+                    (click)="loadSection($event)" role="button">Player Management</button>
+            </div>
+        </div>
 
-    <div *ngFor="let u of data">
-        <p id="comp-render" style=" color: green;">{{u.username}}- Permission Level: {{u.permission_level}}</p>
-    </div>
-    <hr>
-
-    <div>
-        <p style=" color: green;">
-            Add User Name:<input type="text" [(ngModel)]="inputUserName">
-            Add Password: <input type="text" [(ngModel)]="inputUserPassword">
-            Add User Level:<input type="number" [(ngModel)]="inputUserLevel">
-            <button (click)="submitUserQ()" style="color: darkblue; background-color: lightcyan;">submit</button>
-        </p>
-    </div>
-    <hr>
+        <div class="pagewrapper">
 
 
-    <div>
-        <p style=" color: green;">
-            User ID: <input type="number" [(ngModel)]="inputUserLevel">
-            User Name:<input type="text" [(ngModel)]="inputUserName">
-            Password: <input type="text" [(ngModel)]="inputUserPassword">
-            User Level:<input type="number" [(ngModel)]="inputUserLevel">
-            <button (click)="changeUser()" style="color: darkblue; background-color: lightcyan;">submit</button>
-        </p>
-    </div>
-    <hr>
-    <div>
-        <p style=" color: green;">Delete user
 
-            <input type="text">
-            <button (click)="deleteUser()" style="color: darkblue; background-color: lightcyan;">submit</button>
-        </p>
+            <div class="wrapper">
+
+                <div *ngIf="index==1" class="gamebox">
+
+                    <app-submit-game-otd></app-submit-game-otd>
+
+                </div>
+
+                <div *ngIf="index==2" class="userbox">
+
+                    <app-view-all-users-component></app-view-all-users-component>
+
+                </div>
+
+
+            </div>
+
+        </div>
     </div>
 
-<<<<<<< HEAD
-                        <hr>
-                        <div style=" color: green;"> Post Game of the Day
-                            <p >
-                            Date:<input type="date" [(ngModel)]="challenge_date" >
-                            Game ID:<input type="number" [(ngModel)]="inputGameId"> 
-                                 <button (click)="submitGameofDay()" style="color: darkblue; background-color: lightcyan;">submit</button> </p> </div>
-                   
-=======
-    <hr>
-    <div style=" color: green;"> Select Game of the Day
-        <p>
-            Date:<input type="text" [(ngModel)]="inputUserName">
-            Game ID:<input type="number" [(ngModel)]="inputUserLevel">
-            <button (click)="submitGameofDay()" style="color: darkblue; background-color: lightcyan;">submit</button>
-        </p>
-    </div>
-    <app-view-all-users-component></app-view-all-users-component>
->>>>>>> cd922a6f1610a4143d96b7eed9f1a4b13430ed53
 </body>

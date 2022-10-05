@@ -1,21 +1,48 @@
-<p>view-all-users-component works!</p>
 <div class="admin-users-container">
-    <div class="users-list">
-        <div *ngFor="let user of usersList; index as i">
-            <button class="list-button" (click)="changeUserIndex(i)">{{user.username}}</button>
+
+
+
+    <div class="left">
+        <div class="row-left">
+            <div class="header">
+
+                <p>System Users</p>
+            </div>
+        </div>
+
+
+        <div class="users" *ngFor="let user of usersList; index as i">
+            <button [ngClass]=" userIndex == i?  'button-59' : 'button-59 highlight' "
+                (click)="changeUserIndex(i)">{{user.username}}</button>
+
         </div>
     </div>
-    <div *ngIf="usersList.length > 0 && !loading" class="user-properties">
-        <p>Id: {{usersList[userIndex].user_id}}</p>
-        <span>Username:</span><input type="text" [(ngModel)]="usersList[userIndex].username">
-        <br>
-        <span>Profile Pic:</span><input type="text" [(ngModel)]="usersList[userIndex].profile_pic_url">
-        <br>
-        <span>Permission Level:</span><input type="text" [(ngModel)]="usersList[userIndex].permission_level">
 
-        <div class="user-buttons">
-            <button (click)="saveUser()">save</button>
-            <button (click)="deleteUser()">delete</button>
+    <div class="right">
+        <div class="row-right">
+            <div class="header">
+                <p>User Profile</p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div *ngIf="usersList.length > 0 && !loading" class="user-properties">
+                <p>Id: {{usersList[userIndex].user_id}}</p>
+                <label for="username">Username:</label><input class="input" id="username" type="text"
+                    [(ngModel)]="usersList[userIndex].username">
+                <br>
+                <span>Profile Pic:</span><input class="input" type="text"
+                    [(ngModel)]="usersList[userIndex].profile_pic_url">
+                <br>
+                <span>Permission Level:</span><input class="input" type="text"
+                    [(ngModel)]="usersList[userIndex].permission_level">
+
+                <div class="user-buttons">
+                    <button class="button-80" (click)="saveUser()">save</button>
+                    <button class="button-80" (click)="deleteUser()">delete</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

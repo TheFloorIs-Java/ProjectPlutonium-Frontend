@@ -1,0 +1,57 @@
+<div class="boxwrapper">
+
+    <div class="pagewrapper">
+
+        <div class="left">
+            <div class="row-left">
+
+                <div class="header">
+
+                    <p>Schedule of Games</p>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="games">
+                    <p type="text" [(ngModel)]="inputGameId">PlaceHolder</p>
+                    <button class="button-80" (click)="removeGameOTD()">remove</button>
+
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <div class="row-right">
+
+                <div class="header">
+
+                    <p>Submit Game of the Day</p>
+                </div>
+            </div>
+
+            <div class="column">
+
+                <div class="row">
+                    Game ID:<input type="number" [(ngModel)]="inputGameId">
+
+                </div>
+
+                <div class="row">
+                    Date:<input type="date" [(ngModel)]="challenge_date">
+                    <button class="button-80" (click)="submitGameofDay()">submit</button>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
