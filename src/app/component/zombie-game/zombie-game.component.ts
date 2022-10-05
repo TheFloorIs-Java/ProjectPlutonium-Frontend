@@ -84,6 +84,8 @@ export class ZombieGameComponent implements OnInit {
 
     this.itemSetString =  Array.from(this.itemSet).join(", ");
 
+    console.log(this.data[this.pageIndex].actions.length);
+
     if (this.data[this.pageIndex].actions.length == 0)
       this.postScoreOnComplete();
   }
@@ -106,6 +108,8 @@ export class ZombieGameComponent implements OnInit {
 
   postScoreOnComplete() {
 
+    console.log("entered method");
+
     let scoreCard: score = {
       user: this.userService.User!,
       score_id: 0,
@@ -114,11 +118,7 @@ export class ZombieGameComponent implements OnInit {
       score: this.score
     }
 
-    this.http.post("https://projectplutonium.azurewebsites.net/scoreCard",
-    scoreCard,
-    {
-      headers:{session: this.cookieService.get("session") },
-    })
+    this.http.post<score>("https://projectplutonium.azurewebsites.net/scorecard", scoreCard).subscribe(data => console.log(data));
   }
 
   
