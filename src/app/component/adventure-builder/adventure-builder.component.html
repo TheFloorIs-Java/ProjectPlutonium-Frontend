@@ -41,7 +41,7 @@
         <div class="side-window action-menu">
             <b>Page Settings</b>
             <p>Add Score</p>
-            <input type="text" [(ngModel)]="data[index].score">
+            <input type="number" [(ngModel)]="data[index].score">
             <p>Change Hp</p>
             <input type="number" [(ngModel)]="data[index].hpAdjust" >
             <div *ngIf="data[index].hpAdjust! < 0">

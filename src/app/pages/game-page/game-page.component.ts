@@ -76,7 +76,7 @@ export class GamePageComponent implements OnInit {
   getGameByDate() {
 
     console.log(this.currentDate);
-      this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/id/10")//+ this.currentDate)
+      this.http.get<publishedGame>("https://projectplutonium.azurewebsites.net/publishedGames/id/28")//+ this.currentDate)
       .subscribe(data => {this.publishedGame = data;
       this.gameData = JSON.parse(this.publishedGame.game_data);
 

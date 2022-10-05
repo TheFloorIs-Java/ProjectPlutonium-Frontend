@@ -30,32 +30,68 @@ export class ZombieGameComponent implements OnInit {
 
  
 
+  pageIndex = 0;
 
   description : String = "";
-
   map : String = "";
-
   actions : Array<actionbutton> = [];
-
   gamename : String = "Zombie Survival";
   
-  killcount : number = 0;
+  score : number = 0;
+  health : number = 100;
+
+  itemSet= new Set<String>();
+  itemSetString: String = "";
   
-  
- 
+  dead = false;
 
   
 
   ngOnInit(): void {
-    this.changePage(0);
+    this.changePageNumber(0);
+    //this.itemSet.add("Shield")
+    this.itemSetString =  Array.from(this.itemSet).join(", ");
   }
 
-  changePage(sceneindex:number) {
+  changePage(action : actionbutton) {
+    let index : number;
+    let random = Math.random()*100;
+    console.log(random)
+    if (random < (action.chance || 100))
+      index = action.index;
+    else
+      index = action.failIndex || action.index;
+   
+    this.health += this.data[index].hpAdjust!;
+    this.score += this.data[index].score!;
 
-    this.description = this.data[sceneindex].description;
-    this.map = this.data[sceneindex].map;
-    this.actions = this.data[sceneindex].actions;
+    this.description = this.data[index].description;
+    this.map = this.data[index].map;
+    this.actions = this.data[index].actions;
+    this.pageIndex = index;
+    
+    if (this.data[index].addItem != undefined && this.data[index].addItem != "")
+    this.itemSet.add(this.data[index].addItem!)
 
+    if (this.data[index].removeItem != undefined && this.data[index].removeItem != "")
+    this.itemSet.delete(this.data[index].removeItem!)
+
+    this.itemSetString =  Array.from(this.itemSet).join(", ");
+  }
+
+  changePageNumber(index : number) {
+    this.description = this.data[index].description;
+    this.map = this.data[index].map;
+    this.actions = this.data[index].actions;
+    this.pageIndex = index;
+  }
+
+  changePageDied(index : number) {
+    this.description = this.data[index].description;
+    this.map = this.data[index].map;
+    this.actions = this.data[index].actions;
+    this.pageIndex = index;
+    this.dead = true;
   }
 
   postScoreOnComplete(user : user, publishedGame : publishedGame) {

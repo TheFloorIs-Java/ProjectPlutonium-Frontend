@@ -14,15 +14,29 @@
 
 
         </div>
+        <div class="stats-box">
+            <div>
+                <span>Health: {{health}}</span>
+            </div>
+            <div>
+                <span>Score: {{score}}</span>
+            </div>
+            <div>
+                <span>Items: {{itemSetString}}</span>
+            </div>
+        </div>
         <div class = "lowerbox" >
             <div class="map">
                 <img class="image" src="{{map}}">
             </div>
 
             <div class="action-menu">
-                <div class="center" *ngFor = "let action of actions">
-                    <button class="button-27" (click)="changePage(action.index)">{{action.actionLabel}}</button>
+                <div *ngIf="health > 0">
+                    <div class="center" *ngFor = "let action of actions">
+                        <button class="button-27" (click)="changePage(action)" *ngIf="action.requiredItem == '' || itemSet.has(action.requiredItem!)">{{action.actionLabel}}</button>
+                    </div>
                 </div>
+                <button class="button-27" (click)="changePageDied(data[pageIndex].deathIndex!)" *ngIf="health <= 0 && !dead">Continue</button>
                 
             </div>
 

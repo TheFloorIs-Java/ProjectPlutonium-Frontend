@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PutUserComponentComponent } from './put-user-component.component';
 
-describe('PutUserComponentComponent', () => {
+//describe('PutUserComponentComponent', () => {
   let component: PutUserComponentComponent;
   let fixture: ComponentFixture<PutUserComponentComponent>;
 
@@ -15,9 +15,10 @@ describe('PutUserComponentComponent', () => {
     fixture = TestBed.createComponent(PutUserComponentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+
+//});

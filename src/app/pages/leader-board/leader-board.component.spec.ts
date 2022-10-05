@@ -26,7 +26,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
 import { LeaderBoardComponent } from './leader-board.component';
-describe('LeaderBoardComponent', () => {
+//describe('LeaderBoardComponent', () => {
   let component: LeaderBoardComponent;
   let fixture: ComponentFixture<LeaderBoardComponent>;
 
@@ -36,8 +36,8 @@ describe('LeaderBoardComponent', () => {
     });
     fixture = TestBed.createComponent(LeaderBoardComponent);
     component = fixture.componentInstance;
-;
+    it('works', () => {
+    });
   });
-  it('works', () => {
-  });
-});
+
+//});
