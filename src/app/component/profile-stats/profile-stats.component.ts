@@ -9,31 +9,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./profile-stats.component.css']
 })
 export class ProfileStatsComponent implements OnInit {
-
-  placeholderGamesMade : Array<publishedGame> = [
-    {
-      game_id: 1,
-      game_title: "Game 1",
-      game_data:"",
-      user: {}as user,
-      number_of_plays : 0
-    },
-    {
-      game_id: 1,
-      game_title: "Game 2",
-      game_data:"",
-      user: {}as user,
-      number_of_plays : 0
-    },
-    {
-      game_id: 1,
-      game_title: "Game 3",
-      game_data:"",
-      user: {}as user,
-      number_of_plays : 0
-    }
-  ]
-
   @Input()
   user : user = {}as user;
   
