@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import {user} from '../../Model/user';
 import { publishedGame } from 'app/Model/publishedGame';
+import { score } from "../../Model/score";
+import { UserService } from 'app/service/user.service';
 
 @Component({
   selector: 'app-zombie-game',
@@ -16,7 +18,7 @@ import { publishedGame } from 'app/Model/publishedGame';
 
 export class ZombieGameComponent implements OnInit {
 
-  constructor(private http :HttpClient, private cookieService : CookieService) { }
+  constructor(private http :HttpClient, private cookieService : CookieService, private userService : UserService) { }
  
 
   @Input()
@@ -81,6 +83,9 @@ export class ZombieGameComponent implements OnInit {
     this.itemSet.delete(this.data[index].removeItem!)
 
     this.itemSetString =  Array.from(this.itemSet).join(", ");
+
+    if (this.data[this.pageIndex].actions.length == 0)
+      this.postScoreOnComplete();
   }
 
   changePageNumber(index : number) {
@@ -96,24 +101,24 @@ export class ZombieGameComponent implements OnInit {
     this.actions = this.data[index].actions;
     this.pageIndex = index;
     this.dead = true;
+    this.postScoreOnComplete();
   }
 
-  postScoreOnComplete(user : user, publishedGame : publishedGame) {
+  postScoreOnComplete() {
+
+    let scoreCard: score = {
+      user: this.userService.User!,
+      score_id: 0,
+      publishedGame: this.publishedGame,
+      date_submitted: new Date(),
+      score: this.score
+    }
 
     this.http.post("https://projectplutonium.azurewebsites.net/scoreCard",
-    
+    scoreCard,
     {
-      'user' : user.username,
-      'publishedGame' : publishedGame.game_id,
-      'date' : publishedGame.game_id,
-      'score' : 0,
-
-
-    },{
       headers:{session: this.cookieService.get("session") },
-
     })
-
   }
 
   
