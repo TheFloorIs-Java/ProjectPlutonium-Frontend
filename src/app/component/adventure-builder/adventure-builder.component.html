@@ -67,6 +67,8 @@
                 </div>
                 <p>Require Item: </p>
                 <input type="text" [(ngModel)]="data[index].actions[actionIndex].requiredItem">
+                <p>Selectable Only Once: </p>
+                <input type="checkbox" [(ngModel)]="data[index].actions[actionIndex].onlySelectOnce">
             </div>
         </div>
         <div class="scene-add-remove-buttons">

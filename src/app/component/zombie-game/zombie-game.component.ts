@@ -53,7 +53,11 @@ export class ZombieGameComponent implements OnInit {
     this.itemSetString =  Array.from(this.itemSet).join(", ");
   }
 
-  changePage(action : actionbutton) {
+  changePage(action : actionbutton, actionIndex : number) {
+    
+    if (action.onlySelectOnce)
+      this.data[this.pageIndex].actions.splice(actionIndex, 1)
+
     let index : number;
     let random = Math.random()*100;
     console.log(random)
