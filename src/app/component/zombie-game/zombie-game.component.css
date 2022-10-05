@@ -58,7 +58,7 @@
 .lowerbox {
 
     display: flex;
-    height: 50%;
+    height: 48%;
 
 
     justify-content: space-evenly;
@@ -68,9 +68,6 @@
 }
 
 .map {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 50%;
     height: 100%;
     margin: 0.5em;
@@ -79,6 +76,7 @@
 
 .image {
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 

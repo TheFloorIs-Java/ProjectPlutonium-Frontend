@@ -9,4 +9,6 @@ failIndex?: number; //where this option leads on failure
 
 requiredItem?: String; //what item is required for this option to be visible
 
+onlySelectOnce?: Boolean; //option can only be selected one time
+
 }

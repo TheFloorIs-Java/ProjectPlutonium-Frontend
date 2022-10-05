@@ -63,7 +63,7 @@ export class AdventureBuilderComponent implements OnInit {
   }
 
   addAction(){
-    this.data[this.index].actions.push({actionLabel: "action", index: 0, chance:100, failIndex: 0, requiredItem: ""})
+    this.data[this.index].actions.push({actionLabel: "action", index: 0, chance:100, failIndex: 0, requiredItem: "", onlySelectOnce: false})
   }
 
   removeAction(){

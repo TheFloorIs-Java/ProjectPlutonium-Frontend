@@ -30,7 +30,7 @@ export class ViewAllUsersComponentComponent implements OnInit {
 
   saveUser(){
     this.loading = true;
-    this.http.put("http://projectplutonium.azurewebsites.net/users/id/"+this.usersList[this.userIndex].user_id, 
+    this.http.put("https://projectplutonium.azurewebsites.net/users/id/"+this.usersList[this.userIndex].user_id, 
     {
       user_id: this.usersList[this.userIndex].user_id,
       username: this.usersList[this.userIndex].username,
@@ -43,6 +43,6 @@ export class ViewAllUsersComponentComponent implements OnInit {
   deleteUser(){
     this.loading = true;
     this.userIndex = 0;
-    this.http.delete("http://projectplutonium.azurewebsites.net/users/id/"+this.usersList[this.userIndex].user_id ).subscribe(data => {this.loadUserArray(), this.loading = false})
+    this.http.delete("https://projectplutonium.azurewebsites.net/users/id/"+this.usersList[this.userIndex].user_id ).subscribe(data => {this.loadUserArray(), this.loading = false})
   }
 }
