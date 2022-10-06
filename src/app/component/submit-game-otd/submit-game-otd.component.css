@@ -17,6 +17,11 @@
     align-items: center;
 }
 
+.gotlist {
+  width: min(100% -15px, 840px);
+  margin-inline: auto;
+}
+
 .column {
     width: 425px;
     height: 300px;
@@ -25,6 +30,20 @@
     align-content:center;
     row-gap: 15px;
     overflow: auto;
+}
+
+.reference {
+  column-count: 5;
+  width: 425px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 120px;
+  position: absolute;
+  transform: translateY(-100px);
+  
+  
+
 }
 
 .row {
@@ -74,6 +93,32 @@ p {
     border-top-right-radius: 10px;
     transform: translateY(-211.5%);
     
+}
+
+
+
+.gameField {
+  width: min(100% -15px, 840px);
+    margin-inline: auto;
+ display: flex; 
+ align-items: center;
+ justify-content: center;
+gap: 5%;
+height: 100%;
+margin-inline: auto;
+margin:auto;
+
+}
+
+.entry {
+  width: 150px;
+}
+
+
+.gotlist .button-80 {
+
+  height: 30px;
+
 }
 
 

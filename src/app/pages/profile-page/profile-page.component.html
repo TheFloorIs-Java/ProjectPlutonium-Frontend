@@ -2,7 +2,8 @@
     <div class="container" *ngIf="user != undefined">
         <app-profile-info [user] = "user" [viewingOwnProfile] = "viewingOwnProfile"></app-profile-info>
         <app-profile-stats [user] = "user"></app-profile-stats>
-        <app-profile-games-created [user]="user" [viewingOwnProfile] = "viewingOwnProfile"></app-profile-games-created>
+        <app-profile-games-played [user] = "user"></app-profile-games-played>
+        <app-profile-games-created [user]= "user" [viewingOwnProfile] = "viewingOwnProfile"></app-profile-games-created>
     </div>
 
 </html>

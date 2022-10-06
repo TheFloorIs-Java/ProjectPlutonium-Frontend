@@ -4,7 +4,6 @@
 
         <div class="left">
             <div class="row-left">
-
                 <div class="header">
 
                     <p>Schedule of Games</p>
@@ -13,19 +12,33 @@
 
 
             <div class="column">
-                <div class="games">
-                    <p type="text" [(ngModel)]="inputGameId">PlaceHolder</p>
-                    <button class="button-80" (click)="removeGameOTD()">remove</button>
+                <div class="reference">
+                    <p>Title</p>
+                    <p>Date</p>
+                    <p></p>
+                </div>
+                <div *ngIf="gameList.length > 0 && !loading" class="games">
 
+                    <div class="gotlist">
 
+                        <div class="gameField" *ngFor="let game of gameList; index as i">
+
+                            <p class="entry" type="text">{{game.published_game.game_title}}</p>
+                            <p class="entry" type="text">{{game.challengeDate | date : 'yyyy-MM-dd'}}</p>
+                            <button [ngClass]=" gameId == i? 'button-80 entry' : 'button-80 entry' "
+                                (click)="removeGameOTD()">Remove</button>
+
+                        </div>
+                    </div>
 
                 </div>
-
-
-
             </div>
-
         </div>
+
+
+
+
+
 
         <div class="right">
 
@@ -40,7 +53,7 @@
             <div class="column">
 
                 <div class="row">
-                    Game ID:<input type="number" [(ngModel)]="inputGameId">
+                    Game ID:<input type="text" [(ngModel)]="gameId">
 
                 </div>
 

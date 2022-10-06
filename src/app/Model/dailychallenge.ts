@@ -1,8 +1,10 @@
+
 import { publishedGame } from "./publishedGame";
 
 export interface dailychallenge {
 
-    challenge_date : Date;
+    id: Number;
+    challengeDate : Date;
     published_game : publishedGame;
 
 }

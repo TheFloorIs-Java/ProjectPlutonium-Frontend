@@ -32,7 +32,6 @@
       <button [ngClass]=" this.userService.User !== undefined ? 'w3-padding-large w3-button ' : 'w3-padding-large w3-button w3-hide'" title="More">{{userService.User?.username}} <i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a routerLink = "/profile" class="w3-bar-item w3-button">Profile</a>
-        <a href="#" class="w3-bar-item w3-button">Extras</a>
         <a href="#"  class="w3-bar-item w3-button" (click)="logOut()">Sign Out</a>
     
       </div>

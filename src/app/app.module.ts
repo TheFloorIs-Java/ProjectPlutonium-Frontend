@@ -29,6 +29,7 @@ import { UserService } from './service/user.service';
 import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
 import { GamePageComponent } from './pages/game-page/game-page.component';
 import { SubmitGameOTDComponent } from './component/submit-game-otd/submit-game-otd.component';
+import { ProfileGamesPlayedComponent } from './component/profile-games-played/profile-games-played.component';
 
 import { GamelistPageComponent } from './pages/gamelist-page/gamelist-page.component';
 import { GamelisterComponent } from './component/gamelister/gamelister.component';
@@ -70,7 +71,9 @@ import { GamelisterComponent } from './component/gamelister/gamelister.component
     
     GamelistPageComponent,
           GamelisterComponent,
-    //GameListComponent
+    //GameListComponent,
+    GamePageComponent,
+    ProfileGamesPlayedComponent
 
   ],
   imports: [

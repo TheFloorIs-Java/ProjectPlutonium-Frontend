@@ -19,6 +19,7 @@ export class ProfileGamesCreatedComponent implements OnInit {
   user : user = {} as user;
   @Input() 
   viewingOwnProfile : boolean = false;
+  games_list : Array<publishedGame> = [];
 
   constructor(private httpClient: HttpClient, private router: Router ) { }
 
@@ -26,9 +27,6 @@ export class ProfileGamesCreatedComponent implements OnInit {
     this.getUserGames();
   }
 
-
-
-  games_list : Array<publishedGame> = [];
 
   getUserGames(){
     console.log("start request. User id = " + this.user.user_id)
