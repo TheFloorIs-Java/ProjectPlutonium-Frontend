@@ -50,7 +50,7 @@ export class LeaderBoardComponent implements OnInit {
     //this.router.navigate(['profile', row.user.username]);
     this.router.navigate(
       ['/profile'],
-      { queryParams: { username: row.user.username } }
+      { queryParams: { id: row.user.user_id } }
     );
   
   }
