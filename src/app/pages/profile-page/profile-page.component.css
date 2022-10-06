@@ -1,0 +1,79 @@
+.wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    row-gap: 20px;     
+}
+
+.games-played {
+    background-color: rgb(95, 96, 99);
+    color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:35vh;
+    min-height: 200px;
+    min-width: 80vw;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.games-created {
+    background-color: rgb(95, 96, 99);
+    color: #f1f1f1;
+    min-height: 25vh;
+    height: auto;
+    min-width: 80vw;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.stats {
+    background-color: rgb(95, 96, 99);
+}
+
+.pic-and-stats {
+    background-color: rgb(95, 96, 99);
+    display:flex;
+    column-gap: 20%;
+    height:100%;
+    align-items: center;
+    min-width: 80vw;
+    padding-right: 10%;
+    padding-left: 10%;
+    justify-content: center;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.header {
+    background-color:rgb(50, 51, 54);
+    color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80vw;
+    padding-top: 15px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+body {
+    background-color: #f1f1f1;
+    min-height: 110vh;
+    padding-top: 66px;
+    padding-bottom: 20px;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+}
+

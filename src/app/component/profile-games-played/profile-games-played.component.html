@@ -3,15 +3,21 @@
     <div *ngIf="games_played.length > 0">
         <div *ngFor="let scorecard of games_played">
             <div class="games-played-card">
-                <a style="font-size: 1.5em"[routerLink]="['/game']" [queryParams]="{id:scorecard.publishedGame.game_id}">{{scorecard.publishedGame.game_title}}</a>
-                <div class="number-of-plays">
-                    <p>{{user.username}}'s high score: </p>
-                    <p style="font-size: 1.5em">{{scorecard.score}}</p>
-                </div>
-                <div class="number-of-plays">
-                    <p>Number of plays:</p>
-                    <p style="font-size: 1.5em">{{scorecard.publishedGame.number_of_plays}}</p>
-                </div>
+                <span>
+                    <a style="font-size: 1.1em"[routerLink]="['/game']" [queryParams]="{id:scorecard.publishedGame.game_id}">{{scorecard.publishedGame.game_title}}</a>
+                </span>
+                <span>
+                    <div class="number-of-plays">
+                        <p>{{user.username}}'s high score: </p>
+                        <p style="font-size: 1.1em">{{scorecard.score}}</p>
+                    </div>
+                </span>
+                <span>
+                    <div class="number-of-plays">
+                        <p>Number of plays:</p>
+                        <p style="font-size: 1.1em">{{scorecard.publishedGame.number_of_plays}}</p>
+                    </div>
+                </span>
             </div>
         </div>
         

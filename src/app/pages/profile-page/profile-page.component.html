@@ -1,9 +1,22 @@
-<html>
-    <div class="container" *ngIf="user != undefined">
-        <app-profile-info [user] = "user" [viewingOwnProfile] = "viewingOwnProfile"></app-profile-info>
-        <app-profile-stats [user] = "user"></app-profile-stats>
-        <app-profile-games-played [user] = "user"></app-profile-games-played>
-        <app-profile-games-created [user]= "user" [viewingOwnProfile] = "viewingOwnProfile"></app-profile-games-created>
+<body>
+    <div class="wrapper" *ngIf="user != undefined">
+        <div class="header">
+            <h1>{{user.username}}</h1>
+        </div>
+        <div class="pic-and-stats">
+            <div class="pic">
+                <app-profile-info [user]="user" [viewingOwnProfile]="viewingOwnProfile"></app-profile-info>
+            </div>
+            <div class="stats">
+                <app-profile-stats [user]="user"></app-profile-stats>
+            </div>
+        </div>
+        <div class="games-played">
+            <app-profile-games-played [user]="user"></app-profile-games-played>
+        </div>
+        <div class="games-created">
+            <app-profile-games-created [user]="user" [viewingOwnProfile]="viewingOwnProfile">
+            </app-profile-games-created>
+        </div>
     </div>
-
-</html>
+</body>

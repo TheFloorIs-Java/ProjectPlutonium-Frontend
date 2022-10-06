@@ -2,9 +2,10 @@ p{
     margin: 0;
 }
 .games-played-container {
-    border-style: solid;
-    border-color: blue;
-    width: 100%;
+    min-width: 65vw;;
+    max-height: 200px;
+    height:fit-content;
+    overflow: auto;
 }
 
 .games-played-card {
@@ -13,13 +14,32 @@ p{
     justify-content: space-between;
     align-items: center;
     border-bottom-style: dashed;
-    border-color: red;
+    border-color: rgb(51, 46, 46);
     height: 100px;
-
+    padding-right: 5%;
 }
 
 .number-of-plays {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h2 {
+    color: rgb(26, 23, 23);
+    background-color: #f1f1f1;
+    padding: 5px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d1d1d1;
+}
+
+span {
+    flex-basis: 33%;
 }
