@@ -47,7 +47,12 @@ export class LeaderBoardComponent implements OnInit {
   }
 
   goToDetails(row: any){
-    this.router.navigate(['profile', row.user.username]);
+    //this.router.navigate(['profile', row.user.username]);
+    this.router.navigate(
+      ['/profile'],
+      { queryParams: { username: row.user.username } }
+    );
+  
   }
 
 
