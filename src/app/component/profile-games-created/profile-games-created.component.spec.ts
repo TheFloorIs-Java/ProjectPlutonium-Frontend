@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProfileGamesCreatedComponent } from './profile-games-created.component';
 
 
-fdescribe('ProfileGamesCreatedComponent', () => {
+describe('ProfileGamesCreatedComponent', () => {
   let component: ProfileGamesCreatedComponent;
   let fixture: ComponentFixture<ProfileGamesCreatedComponent>;
 
