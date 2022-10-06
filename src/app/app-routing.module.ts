@@ -18,8 +18,9 @@ const routes: Routes = [
   {path: 'gamelist', component: GamelistPageComponent},
   {path: 'admin', component: AdminPageComponentComponent},
   {path: 'profile', component: ProfilePageComponent},
+  {path: 'profile/:username', component: ProfilePageComponent},
   {path: 'leaderboard', component: LeaderBoardComponent},
-  {path: 'create', component: CreatePageComponent},  
+  {path: 'create', component: CreatePageComponent},
   {path: '**', component: HomePageComponent},
 
 ];
