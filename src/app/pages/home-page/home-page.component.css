@@ -36,22 +36,27 @@ Text animation
 
 
   h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
     word-wrap: break-word;
     word-break: break-all;
-    max-width: 250px;
-    min-height: fit-content;
+    
+
   }
+
+
   .title {
     word-wrap: break-word;
     word-break: break-all;
     height: auto;
+    font-size: 25px;
     
   }
   
   /* Style the header */
   .header {
     display: flex;
-    max-height: 900px;
+    max-height: 1000px;
     font-size: 35px;
     
     
