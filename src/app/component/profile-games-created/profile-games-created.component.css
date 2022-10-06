@@ -88,3 +88,7 @@ a {
 a:hover {
   color: #d1d1d1;
 }
+
+span {
+  flex-basis: 50%;
+}
