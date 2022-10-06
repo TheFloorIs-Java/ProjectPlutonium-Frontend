@@ -7,6 +7,7 @@ import { LoginPageComponentComponent } from './pages/login-page-component/login-
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { GamePageComponent } from './pages/game-page/game-page.component';
+import { GamelistPageComponent } from './pages/gamelist-page/gamelist-page.component'
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'login', component: LoginPageComponentComponent},
   {path: 'game', component: GamePageComponent},
   {path: 'home', component: HomePageComponent},
+  {path: 'gamelist', component: GamelistPageComponent},
   {path: 'admin', component: AdminPageComponentComponent},
   {path: 'profile', component: ProfilePageComponent},
   {path: 'leaderboard', component: LeaderBoardComponent},

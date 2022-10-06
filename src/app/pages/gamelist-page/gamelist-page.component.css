@@ -1,0 +1,10 @@
+
+body{
+    display:flex;
+    justify-content: space-around;
+}
+.gamelistcontainer{
+    border-style: solid ;
+    margin-top:45px;
+width: 1080px;
+}

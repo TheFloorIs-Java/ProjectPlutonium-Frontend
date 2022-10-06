@@ -12,8 +12,9 @@ import { AdminPageComponentComponent } from './admin-page-component.component';
     });
     fixture = TestBed.createComponent(AdminPageComponentComponent);
     component = fixture.componentInstance;
-;
+    fixture.detectChanges();
   });
+ 
   //it('works', () => {
   //});
 //});

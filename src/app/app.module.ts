@@ -29,6 +29,10 @@ import { UserService } from './service/user.service';
 import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
 import { GamePageComponent } from './pages/game-page/game-page.component';
 import { SubmitGameOTDComponent } from './component/submit-game-otd/submit-game-otd.component';
+
+import { GamelistPageComponent } from './pages/gamelist-page/gamelist-page.component';
+import { GamelisterComponent } from './component/gamelister/gamelister.component';
+//import { GameListComponent } from './pages/gameList-page/game-list.component';
 //import { HttpClientModule, HttpClient, HttpResponse } from '@angular/common/http'; 
 //import { HttpClientTestingModule } from '@angular/common/http/testing';
 //import { HttpTestingController } from '@angular/common/http/testing';
@@ -62,7 +66,11 @@ import { SubmitGameOTDComponent } from './component/submit-game-otd/submit-game-
     AdventureBuilderComponent,
     ProfileGamesCreatedComponent,
     GamePageComponent,
-    SubmitGameOTDComponent
+    SubmitGameOTDComponent,
+    
+    GamelistPageComponent,
+          GamelisterComponent,
+    //GameListComponent
 
   ],
   imports: [

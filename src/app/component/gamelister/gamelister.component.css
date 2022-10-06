@@ -1,0 +1,10 @@
+.gamelister-container{
+    border-style: solid;
+    border-color: greenyellow;
+
+}
+.game-card{
+    display: flex;
+    justify-content: space-between;
+    border-style: solid;
+}

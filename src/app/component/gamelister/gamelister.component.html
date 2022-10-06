@@ -1,0 +1,12 @@
+<div class="gamelister-container">
+    <p>gamelister works!</p>
+    <div *ngIf="Gamelist.length>0">
+        <div *ngFor="let game of Gamelist">
+            <div class="game-card">
+                <a [routerLink]="['/game']" [queryParams]="{id:game.game_id}">{{game.game_title}}</a>
+                <a [routerLink]="['/profile']" [queryParams]="{id:game.user.user_id}">{{game.user.username}}</a>
+                <p>Numberof Plays: {{game.number_of_plays}}</p>
+            </div>
+        </div>
+    </div>
+</div>

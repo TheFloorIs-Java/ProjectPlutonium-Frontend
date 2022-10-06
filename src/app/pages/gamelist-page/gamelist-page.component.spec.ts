@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubmitGameOTDComponent } from './submit-game-otd.component';
+import { GamelistPageComponent } from './gamelist-page.component';
 
-describe('SubmitGameOTDComponent', () => {
-  let component: SubmitGameOTDComponent;
-  let fixture: ComponentFixture<SubmitGameOTDComponent>;
+describe('GamelistPageComponent', () => {
+  let component: GamelistPageComponent;
+  let fixture: ComponentFixture<GamelistPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubmitGameOTDComponent ]
+      declarations: [ GamelistPageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SubmitGameOTDComponent);
+    fixture = TestBed.createComponent(GamelistPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,6 +21,3 @@ describe('SubmitGameOTDComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-
-
