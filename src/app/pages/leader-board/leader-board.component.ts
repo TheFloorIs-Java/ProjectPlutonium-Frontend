@@ -27,7 +27,7 @@ export class LeaderBoardComponent implements OnInit {
   }
 
   getUsers(){
-    this.http.get<any>("http://localhost:8080/leaderboard").subscribe(
+    this.http.get<any>("https://projectplutonium.azurewebsites.net/leaderboard").subscribe(
       response => {
         this.datasource = new MatTableDataSource(response);
         this.datasource.paginator = this.paginator;
