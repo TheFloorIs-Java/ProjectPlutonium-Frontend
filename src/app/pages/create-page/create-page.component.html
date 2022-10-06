@@ -1,27 +1,34 @@
 <body>
-
-
-    <div class="header">
-      <h2>Create Info</h2>
-      <p class="subheader">Build your own adventure here!</p>
-    </div>
-    
     <div class="row">
-      <div class="column side" style="background-color:rgb(252, 252, 252);"> </div>
-      <div class="column middle" style="background-color: rgba(51, 37, 37, 0.822);">
+      <div class="column-middle" style="background-color: rgba(44, 45, 48, 0.856); padding-top:2em">
         <p clas="gamelabel"> Zombie Surival </p>
         <div *ngIf="this.userService.User != undefined">
           <app-adventure-builder></app-adventure-builder>
         </div>
-
+        <div style="color: white; padding-bottom: 10%;">
+          <hr>
+          <h2>
+            How to create:
+          </h2>
+          <p>
+            Adventure games are made up of pages, with each page having a button that will link you to another page!
+          </p>
+          <p>
+            Create and select pages on the left
+          </p>
+          <p>
+            Write your discription in the middle
+          </p>
+          <p>
+            Add buttons, and edit page and button settings on the right
+          </p>
+          <p>
+            Remember that the game ends when the player reaches a page with no actions!
+          </p>
+        </div>
 
       </div>
       
       <div class="column side" style="background-color:rgb(255, 255, 255);"> </div>
     </div>
-    
-    <div class="footer">
-      <p>Footer</p>
-    </div>
-
     </body>

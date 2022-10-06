@@ -30,7 +30,7 @@ export class NavbarComponentComponent implements OnInit {
 
   clicked : boolean = false;
   loginstatus : boolean = false;
- 
+
 
 
   myFunction() {
