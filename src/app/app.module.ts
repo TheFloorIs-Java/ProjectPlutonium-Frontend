@@ -34,7 +34,13 @@ import { ProfileGamesPlayedComponent } from './component/profile-games-played/pr
 import { GamelistPageComponent } from './pages/gamelist-page/gamelist-page.component';
 import { GamelisterComponent } from './component/gamelister/gamelister.component';
 //import { GameListComponent } from './pages/gameList-page/game-list.component';
-//import { HttpClientModule, HttpClient, HttpResponse } from '@angular/common/http'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from "@angular/material/sort";
+import { MatPaginatorModule } from "@angular/material/paginator";
+//import { HttpClientModule, HttpClient, HttpResponse } from '@angular/common/http';
 //import { HttpClientTestingModule } from '@angular/common/http/testing';
 //import { HttpTestingController } from '@angular/common/http/testing';
 //import { RouterTestingModule } from '@angular/router/testing';
@@ -81,6 +87,13 @@ import { GamelisterComponent } from './component/gamelister/gamelister.component
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSortModule,
+    MatPaginatorModule
+
     //HttpClientTestingModule,
     //RouterTestingModule
   ],
