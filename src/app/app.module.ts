@@ -26,7 +26,7 @@ import { LeaderBoardComponent } from './pages/leader-board/leader-board.componen
 import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { AdventureBuilderComponent } from './component/adventure-builder/adventure-builder.component';
 import { UserService } from './service/user.service';
-import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
+//import { ProfileGamesCreatedComponent } from './component/profile-games-created/profile-games-created.component';
 import { GamePageComponent } from './pages/game-page/game-page.component';
 import { SubmitGameOTDComponent } from './component/submit-game-otd/submit-game-otd.component';
 import { ProfileGamesPlayedComponent } from './component/profile-games-played/profile-games-played.component';
@@ -71,7 +71,7 @@ import { MatPaginatorModule } from "@angular/material/paginator";
     LeaderBoardComponent,
     CreatePageComponent,
     AdventureBuilderComponent,
-    ProfileGamesCreatedComponent,
+   // ProfileGamesCreatedComponent,
     GamePageComponent,
     SubmitGameOTDComponent,
     

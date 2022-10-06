@@ -23,7 +23,7 @@ module.exports = function (config) {
       clearContext: true // leave Jasmine Spec Runner output visible in browser
     },
     jasmineHtmlReporter: {
-      suppressAll: true // removes the duplicated traces
+      suppressAll: false // removes the duplicated traces
     },
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/project-plutonium'),
