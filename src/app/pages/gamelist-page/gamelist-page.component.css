@@ -2,9 +2,15 @@
 body{
     display:flex;
     justify-content: space-around;
+    background-color:rgb(29, 28, 28);
 }
 .gamelistcontainer{
     border-style: solid ;
     margin-top:45px;
 width: 1080px;
+background-color: rgb(29, 28, 28);
+}
+table{
+    margin-top: 20px;
+    background-color:rgb(29, 28, 28);
 }

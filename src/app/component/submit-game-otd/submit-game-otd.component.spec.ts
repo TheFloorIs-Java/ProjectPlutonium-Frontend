@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubmitGameOTDComponent } from './submit-game-otd.component';
 
-describe('SubmitGameOTDComponent', () => {
+//describe('SubmitGameOTDComponent', () => {
   let component: SubmitGameOTDComponent;
   let fixture: ComponentFixture<SubmitGameOTDComponent>;
 
@@ -17,10 +17,10 @@ describe('SubmitGameOTDComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+ // it('should create', () => {
+ //   expect(component).toBeTruthy();
+ // });
+//});
 
 
 
