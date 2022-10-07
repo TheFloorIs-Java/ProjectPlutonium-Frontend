@@ -15,17 +15,8 @@ export class ProfilePageComponent implements OnInit {
 
   id : String = "";
   user : user | undefined = undefined;
-  viewingOwnProfile : boolean = false; 
+  viewingOwnProfile : boolean = false;
   
-  // {
-  //   id : 1,
-  //   username : "jacob",
-  //   profile_pic_url : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg/640px-Lewis_Hamilton_2016_Malaysia_2.jpg",
-  //   password : "pass",
-  //   permissionLevel : 1,
-  //   salt : "salt"
-  // };
-
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient, 
@@ -46,11 +37,12 @@ export class ProfilePageComponent implements OnInit {
     else{
       this.loadUser();
     }
-    //Commented out the redirect for non-logged in users...Need to make a user object above to send into the components
+
+        //Commented out the redirect for non-logged in users...Need to make a user object above to send into the components
 
   }
 
-  loadUser() {
+   loadUser() {
     if (this.id == null) {
       this.viewingOwnProfile = true;
       if (this.userService.User != undefined){

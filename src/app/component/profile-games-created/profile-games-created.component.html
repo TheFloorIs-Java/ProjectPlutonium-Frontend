@@ -2,9 +2,15 @@
 <div class="games-created-container">
     <div class="game-created-card" *ngFor="let game of games_list">
         <div class="game-created-card-container">
-            <a [routerLink]="['/game']" [queryParams]="{id:game.game_id}">{{game.game_title}}</a>
-            <p>Number of Plays: {{game.number_of_plays}}</p>
-            <button (click) = "deleteGame(game.game_id)" *ngIf="viewingOwnProfile">Delete game</button>
+            <span>
+                <a style="font-size: 1.1em"[routerLink]="['/game']" [queryParams]="{id:game.game_id}">{{game.game_title}}</a>
+            </span>
+            <span style = "display: flex; justify-content: center;">
+                <p>Number of Plays: {{game.number_of_plays}}</p>
+            </span>
+            <span style = "display: flex; justify-content: right; padding-right: 5%;">
+                <button class = "button-80" (click) = "deleteGame(game.game_id)" *ngIf="viewingOwnProfile">Delete</button>
+            </span>        
         </div>
     </div>
 </div>

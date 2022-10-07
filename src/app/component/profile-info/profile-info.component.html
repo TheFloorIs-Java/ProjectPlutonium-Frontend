@@ -1,17 +1,13 @@
 <br><br>
-<style>
-    .wrapper {
-        border: 5px solid black;
-        margin: 0 auto;
-    }
-</style>
 <body>
-    <div class ="wrapper">
-        <h1>{{user.username}}</h1>
-        <img src={{pro_pic_url}} width="200" height="200"/><br><br>
-        <div *ngIf = "viewingOwnProfile">
-            <input id="propicurl" type="text" [(ngModel)]="newurl" placeholder="Enter url for new profile picture">
-            <button (click)="changeProfilePic()">Submit</button>
-        </div>
-    </div>
+    
 </body>
+<img src={{pro_pic_url}} style="object-fit: cover; padding-bottom: 22px;" height="200px" width = "200px"/>
+        <div class = "urlsubmit" *ngIf = "viewingOwnProfile">
+            <div class = "submitbutton">
+                <input size="22px" id="propicurl" type="text" [(ngModel)]="newurl" placeholder="Enter url for new profile picture">
+            </div>
+            <div class = "submitbutton">
+                <button class = "button-80" (click)="changeProfilePic()">Submit</button>
+            </div>
+        </div>
