@@ -23,7 +23,7 @@
 
                         <div class="gameField" *ngFor="let game of gameList; index as i">
 
-                            <p class="entry" type="text">{{game.published_game.game_title}}</p>
+                            <p class="entry" type="text">{{game.publishedGame.game_title}}</p>
                             <p class="entry" type="text">{{game.challengeDate | date : 'yyyy-MM-dd' : '+0000'}}</p>
                             <button [ngClass]=" gameId == i? 'button-80 entry' : 'button-80 entry' "
                                 (click)="removeGameOTD()">Remove</button>

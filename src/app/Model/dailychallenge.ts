@@ -5,6 +5,6 @@ export interface dailychallenge {
 
     id: Number;
     challengeDate : Date;
-    published_game : publishedGame;
+    publishedGame : publishedGame;
 
 }

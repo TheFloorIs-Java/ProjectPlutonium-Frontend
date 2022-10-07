@@ -37,7 +37,7 @@ export class SubmitGameOTDComponent implements OnInit {
     let dailyChallenge : dailychallenge = {
       id: 0,
       challengeDate: new Date(this.challenge_date+"T00:00:00"),
-      published_game: {
+      publishedGame: {
         game_id : this.gameId,
         game_title : 'test',
         game_data: 'test',
