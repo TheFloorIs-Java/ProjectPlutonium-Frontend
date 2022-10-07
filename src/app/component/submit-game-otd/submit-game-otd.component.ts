@@ -49,7 +49,7 @@ export class SubmitGameOTDComponent implements OnInit {
     this.loading = true;
     console.log(this.challenge_date.toString());
     console.log(this.gameId);
-    this.http.post<dailychallenge>("http://localhost:8080/dailyChallenge/", dailyChallenge).subscribe(data=> {this.getAllGamesOTD(); this.loading = false; console.log(data)});  
+    this.http.post<dailychallenge>("https://projectplutonium.azurewebsites.net/dailyChallenge/", dailyChallenge).subscribe(data=> {this.getAllGamesOTD(); this.loading = false; console.log(data)});  
 
             console.log(this.gameId);
   }
