@@ -84,21 +84,21 @@ Text animation
 
     flex:1;
     object-fit:cover;
-    min-height: 80vh;
-    min-width: 300px;
+    min-height: 70vh;
+    min-width: 400px;
     display: grid;
     justify-content: right;
        
   }
 
-  img {
+  .hero {
     
     position:cover;
-    max-width: 1200px;
-    min-height: 900px;
+    max-width: 1400px;
+    min-height: 70vh;
   }
 
-  .image {
+  .hero {
     max-height: 900px;
   }
 
@@ -129,9 +129,83 @@ Text animation
     -ms-flex: 2;
     flex: 2;
     max-width: 100%;
- 
+    padding-top: 400px;
+    padding-bottom: 100px;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
   }
   
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 20px;
+    width:80%;
+    height: 800px;
+  }
+
+  .card-wrapper {
+    background-color: #f1f1f1;
+    height: 600px;
+    width: 400px;
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    
+  }
+
+  .card-header{
+    background-color: #646262;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:20px;
+  }
+
+  .card-header h1{
+    color: #f1f1f1;
+    font-weight: 500;
+  }
+
+  .card-body {
+    display: grid;
+    justify-content: center;
+    
+    text-align: left;
+    height:500px;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .card-body p{
+    justify-content: baseline;
+  }
+
+  .content-img {
+    display: flex;
+    flex-flow: column;
+  }
+  
+
+  .card-image{
+    object-fit: cover;
+    height:220px;
+    width: 350px;
+    border-radius: 5px;
+    margin:auto;
+    
+  }
+
+  .card-footer {
+    background-color: #dddddd;
+  }
+
+
+
   /* Style the footer */
   .footer {
     
@@ -152,7 +226,7 @@ Text animation
   @media only screen and (min-width: 1500px){
     .column.middle{
         min-width: 800px;
-        min-height: fit-content;
+        min-height: 70vh;
     }
     .column.side {
         max-height: fit-content;
@@ -162,10 +236,10 @@ Text animation
 
   @media screen and (max-width: 1800px) {
     
-    img {
+    .hero {
     position:cover;
-    max-width: 900px;
-    min-height: 900px;
+    max-width: 800px;
+    height: 30vh;
     }
   }
 
@@ -230,8 +304,123 @@ Keyframes Code for the text animation
 
 
 /*
-  CARDS
+  Button
 */
 
+.button-row {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 
 
+
+
+/* CSS */
+.button-82-pushable {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-82-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-82-front {
+  font-family: "Poppins", sans-serif;
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-82-front {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-82-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}

@@ -32,6 +32,16 @@ export class SubmitGameOTDComponent implements OnInit {
   }
 
 
+  
+
+/**
+ * 
+ * Submits Game of the Day to the schedule of GOT Games
+ * 
+ * @param game_id the published games id
+ * @param challenge_date the string of the chosen date
+ * @return dailychallenge object to the dailychallenge array
+ */
   submitGameofDay(){
 
     let dailyChallenge : dailychallenge = {
