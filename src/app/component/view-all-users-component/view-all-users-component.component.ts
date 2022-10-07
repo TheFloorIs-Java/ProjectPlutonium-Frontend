@@ -42,7 +42,7 @@ export class ViewAllUsersComponentComponent implements OnInit {
   
   deleteUser(){
     this.loading = true;
-    this.userIndex = 0;
     this.http.delete("https://projectplutonium.azurewebsites.net/users/id/"+this.usersList[this.userIndex].user_id ).subscribe(data => {this.loadUserArray(), this.loading = false})
+    this.userIndex = 0;
   }
 }
