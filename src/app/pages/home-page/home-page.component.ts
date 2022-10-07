@@ -49,7 +49,7 @@ export class HomePageComponent implements OnInit {
         this.userService.User = data
         this.getGameById();
       }, 
-      error => { this.router.navigate(['/login']) });
+      error => {});
     }
     else {
       this.getGameById();
